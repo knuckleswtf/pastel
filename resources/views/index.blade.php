@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>{!! $page['title'] ?? "API Documentation" !!}</title>
 
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+
     {!! get_css_link_tag('style', 'screen') !!}
     {!! get_css_link_tag('print', 'print') !!}
     {!! get_js_script_tag('all') !!}
@@ -13,6 +15,7 @@
     {!! get_css_link_tag('highlight-darcula') !!}
     {!! get_js_script_tag('highlight.pack') !!}
     <script>hljs.initHighlightingOnLoad();</script>
+
 </head>
 
 <body class="" data-languages="{{ json_encode($page['language_tabs'] ?? []) }}">
@@ -22,8 +25,8 @@
         {!! get_image_tag('navbar') !!}
       </span>
 </a>
-<div class="toc-wrapper">
-    {!! get_image_tag("logo", ['class' => 'logo']) !!}
+<div class="tocify-wrapper">
+    {!! get_image_tag("logo", 'logo') !!}
     @isset($page['language_tabs'])
     <div class="lang-selector">
         @foreach($page['language_tabs'] as $lang)
@@ -36,7 +39,7 @@
     </div>
     <ul class="search-results"></ul>
     
-    <ul id="toc" class="toc-list-h1">
+    <ul id="toc">
     </ul>
 
     @if(isset($page['toc_footers']))
@@ -62,11 +65,5 @@
         @endif
     </div>
 </div>
-<script>
-   // $(function() {
-   //     //Calls the tocify method on your HTML div.
-   //   //  $("#toc").tocify();
-   // });
-</script>
 </body>
 </html>

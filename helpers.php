@@ -99,9 +99,9 @@ function get_js_script_tag($name)
     HTML;
 }
 
-function get_image_tag($name)
+function get_image_tag($name, $class = '')
 {
     return <<<HTML
-    <img src="images/$name.png"  alt="$name-image"/>
+    <img src="images/$name.png"  alt="$name-image" class="$class"/>
     HTML;
 }
