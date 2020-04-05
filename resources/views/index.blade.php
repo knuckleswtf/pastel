@@ -28,17 +28,17 @@
 <div class="tocify-wrapper">
     {!! get_image_tag("logo", 'logo') !!}
     @isset($page['language_tabs'])
-    <div class="lang-selector">
-        @foreach($page['language_tabs'] as $lang)
-        <a href="#" data-language-name="{{ $lang }}">{{ $lang }}</a>
-        @endforeach
-    </div>
+        <div class="lang-selector">
+            @foreach($page['language_tabs'] as $lang)
+                <a href="#" data-language-name="{{ $lang }}">{{ $lang }}</a>
+            @endforeach
+        </div>
     @endisset
     <div class="search">
         <input type="text" class="search" id="input-search" placeholder="Search">
     </div>
     <ul class="search-results"></ul>
-    
+
     <ul id="toc">
     </ul>
 
@@ -65,5 +65,10 @@
         @endif
     </div>
 </div>
+<script>
+    $(function () {
+        setupLanguages(["bash", "javascript", "php", "python"]);
+    });
+</script>
 </body>
 </html>
