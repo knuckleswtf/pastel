@@ -2,25 +2,14 @@
 
 use Illuminate\Support\Collection;
 use Mpociot\Documentarian\Documentarian;
+use PHPUnit\Framework\TestCase;
 
-function glob_recursive($pattern, $flags = 0)
-{
-    $files = glob($pattern, $flags);
-
-    foreach (glob(dirname($pattern) . '/*', GLOB_ONLYDIR | GLOB_NOSORT) as $dir) {
-        $files = array_merge($files, glob_recursive($dir . '/' . basename($pattern), $flags));
-    }
-
-    return $files;
-}
-
-
-class DocumentarianTest extends PHPUnit_Framework_TestCase
+class DocumentarianTest extends TestCase
 {
 
-    public function tearDown()
+    public function tearDown(): void
     {
-        exec('rm -rf ' . __DIR__ . '/output');
+        deleteDirectoryAndContents('/tests/output');
         mkdir(__DIR__ . '/output');
         touch(__DIR__ . '/output/.gitkeep');
     }
@@ -95,22 +84,22 @@ class DocumentarianTest extends PHPUnit_Framework_TestCase
         // test1.md - no frontmatter yaml present
         copy(__DIR__ . '/files/test1.md', $outputDir . '/source/index.md');
         $documentarian->generate($outputDir);
-        $this->assertFileEquals($outputDir . '/index.html', $assertionDir . '/test1.html');
+        $this->assertFilesHaveSameContentIgnoringNewlines($outputDir . '/index.html', $assertionDir . '/test1.html');
 
         // test2.md - valid frontmatter yaml
         copy(__DIR__ . '/files/test2.md', $outputDir . '/source/index.md');
         $documentarian->generate($outputDir);
-        $this->assertFileEquals($outputDir . '/index.html', $assertionDir . '/test2.html');
+        $this->assertFilesHaveSameContentIgnoringNewlines($outputDir . '/index.html', $assertionDir . '/test2.html');
 
         // test3.md - include and parse additional markdown files
         copy(__DIR__ . '/files/test3.md', $outputDir . '/source/index.md');
         $documentarian->generate($outputDir);
-        $this->assertFileEquals($outputDir . '/index.html', $assertionDir . '/test3.html');
+        $this->assertFilesHaveSameContentIgnoringNewlines($outputDir . '/index.html', $assertionDir . '/test3.html');
 
         // test4.md - ignore not existing include file
         copy(__DIR__ . '/files/test4.md', $outputDir . '/source/index.md');
         $documentarian->generate($outputDir);
-        $this->assertFileEquals($outputDir . '/index.html', $assertionDir . '/test4.html');
+        $this->assertFilesHaveSameContentIgnoringNewlines($outputDir . '/index.html', $assertionDir . '/test4.html');
 
     }
 
@@ -126,4 +115,10 @@ class DocumentarianTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('gh-pages', $documentarian->config($outputDir, 'deployment.branch'));
     }
 
+    public function assertFilesHaveSameContentIgnoringNewlines($pathToExpected, $pathToActual)
+    {
+        $actual = getFileContentsIgnoringNewlines($pathToActual);
+        $expected = getFileContentsIgnoringNewlines($pathToExpected);
+        $this->assertSame($expected, $actual);
+    }
 }
