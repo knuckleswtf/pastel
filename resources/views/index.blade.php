@@ -51,6 +51,9 @@
             @endforeach
         </ul>
     @endif
+        <ul class="toc-footer">
+            <li>Last updated on {{ $page['last_updated'] }}</li>
+        </ul>
 </div>
 <div class="page-wrapper">
     <div class="dark-box"></div>
@@ -69,7 +72,8 @@
 </div>
 <script>
     $(function () {
-        setupLanguages(["bash", "javascript", "php", "python"]);
+        var languages = @json($page['language_tabs']);
+        setupLanguages(languages);
     });
 </script>
 </body>

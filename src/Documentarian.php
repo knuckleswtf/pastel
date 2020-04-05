@@ -61,6 +61,12 @@ class Documentarian
             }
         }
 
+        if (isset($frontmatter['last_updated'])) {
+            $frontmatter['last_updated'] = date("F j Y", strtotime($frontmatter['last_updated']));
+        } else {
+            $frontmatter['last_updated'] = date("F j Y", filemtime($sourceMarkdownFile));
+        }
+
         $output = $renderer->render('index', [
             'page' => $frontmatter,
             'content' => $html,
