@@ -2,7 +2,7 @@
 
 html {
     font-family: 'PT Sans', sans-serif;
-    font-weight: 600;
+    font-size: 1.2em;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
 }
@@ -227,8 +227,7 @@ th {
 body,
 html {
     font-family: 'PT Sans', Helvetica Neue, Helvetica, Arial, Microsoft Yahei, 微软雅黑, STXihei, 华文细黑, sans-serif;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 15px;
 }
 
 .content h1,
@@ -262,7 +261,6 @@ html {
     font-family: 'PT Sans', sans-serif;
     speak: none;
     font-style: normal;
-    font-weight: 600;
     font-variant: normal;
     text-transform: none;
     line-height: 1
