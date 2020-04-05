@@ -1,17 +1,16 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>{!! $page['title'] ?? "API Documentation" !!}</title>
 
-    {!! get_css_link_tag('style', ['media' => 'screen']) !!}
-    {!! get_css_link_tag('print', ['media' => 'print']) !!}
-    {!! get_css_link_tag('print', ['media' => 'print']) !!}
+    {!! get_css_link_tag('style', 'screen') !!}
+    {!! get_css_link_tag('print', 'print') !!}
     {!! get_js_script_tag('all') !!}
 
-    {!! get_css_link_tag('highlight-atelier-cave-light') !!}
+    {!! get_css_link_tag('highlight-darcula') !!}
     {!! get_js_script_tag('highlight.pack') !!}
     <script>hljs.initHighlightingOnLoad();</script>
 </head>
@@ -63,5 +62,11 @@
         @endif
     </div>
 </div>
+<script>
+   // $(function() {
+   //     //Calls the tocify method on your HTML div.
+   //   //  $("#toc").tocify();
+   // });
+</script>
 </body>
 </html>

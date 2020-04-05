@@ -39,7 +39,6 @@ if (!function_exists('output')) {
  * @param String $dest - Destination of files being moved
  * @return bool
  */
-
 if (!function_exists('rcopy')) {
     function rcopy($src, $dest)
     {
@@ -66,17 +65,6 @@ if (!function_exists('rcopy')) {
     }
 }
 
-function glob_recursive($pattern, $flags = 0)
-{
-    $files = glob($pattern, $flags);
-
-    foreach (glob(dirname($pattern) . '/*', GLOB_ONLYDIR | GLOB_NOSORT) as $dir) {
-        $files = array_merge($files, glob_recursive($dir . '/' . basename($pattern), $flags));
-    }
-
-    return $files;
-}
-
 function deleteDirectoryAndContents($dir)
 {
     $dir = ltrim($dir, '/');
@@ -97,10 +85,10 @@ function getFileContentsIgnoringNewlines($path)
     return str_replace("\r\n", "\n", file_get_contents($path));
 }
 
-function get_css_link_tag($name)
+function get_css_link_tag($name, $media = '')
 {
     return <<<HTML
-    <link rel="stylesheet" href="css/$name.css" />
+    <link rel="stylesheet" href="css/$name.css" media="$media" />
     HTML;
 }
 
@@ -114,6 +102,6 @@ function get_js_script_tag($name)
 function get_image_tag($name)
 {
     return <<<HTML
-    <img src="images/$name.png" />
+    <img src="images/$name.png"  alt="$name-image"/>
     HTML;
 }
