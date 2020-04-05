@@ -279,7 +279,7 @@ html {
 }
 
 .tocify-wrapper>.search:before {
-    content: "\f002"
+    content: "🔎"
 }
 
 .highlight .c,
