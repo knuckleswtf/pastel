@@ -26,7 +26,9 @@
       </span>
 </a>
 <div class="tocify-wrapper">
+    @if($config['logo'] != false)
     {!! get_image_tag("logo", 'logo') !!}
+    @endif
     @isset($page['language_tabs'])
         <div class="lang-selector">
             @foreach($page['language_tabs'] as $lang)

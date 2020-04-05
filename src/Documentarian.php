@@ -12,7 +12,11 @@ class Documentarian
     /**
      * Generate the API documentation using the markdown and include files
      */
-    public function generate(string $sourceFolder, ?string $destinationFolder = '')
+    public function generate(
+        string $sourceFolder,
+        ?string $destinationFolder = '',
+        $config = ['logo' => false]
+    )
     {
         if (Str::endsWith($sourceFolder, '.md')) {
             // We're given just the path to a file, we'll use default assets
@@ -60,6 +64,7 @@ class Documentarian
         $output = $renderer->render('index', [
             'page' => $frontmatter,
             'content' => $html,
+            'config' => $config,
         ]);
 
         if (!is_dir($destinationFolder)) {
