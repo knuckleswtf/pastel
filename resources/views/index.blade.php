@@ -4,67 +4,64 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>{{$page['title'] ?? '' }}</title>
+    <title>{!! $page['title'] ?? "API Documentation" !!}</title>
 
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/all.js"></script>
+    {!! get_css_link_tag('style', ['media' => 'screen']) !!}
+    {!! get_css_link_tag('print', ['media' => 'print']) !!}
+    {!! get_css_link_tag('print', ['media' => 'print']) !!}
+    {!! get_js_script_tag('all') !!}
 
+    {!! get_css_link_tag('highlight-atelier-cave-light') !!}
+    {!! get_js_script_tag('highlight.pack') !!}
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
 
-    @if(isset($page['language_tabs']))
-      <script>
-        $(function() {
-            setupLanguages({!! json_encode($page['language_tabs']) !!});
-        });
-      </script>
-    @endif
-  </head>
-
-  <body class="">
-    <a href="#" id="nav-button">
+<body class="" data-languages="{{ json_encode($page['language_tabs'] ?? []) }}">
+<a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" />
+        {!! get_image_tag('navbar') !!}
       </span>
-    </a>
-    <div class="tocify-wrapper">
-        <img src="images/logo.png" />
+</a>
+<div class="toc-wrapper">
+    {!! get_image_tag("logo", ['class' => 'logo']) !!}
+    @isset($page['language_tabs'])
+    <div class="lang-selector">
+        @foreach($page['language_tabs'] as $lang)
+        <a href="#" data-language-name="{{ $lang }}">{{ $lang }}</a>
+        @endforeach
+    </div>
+    @endisset
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+    <ul class="search-results"></ul>
+    
+    <ul id="toc" class="toc-list-h1">
+    </ul>
+
+    @if(isset($page['toc_footers']))
+        <ul class="toc-footer">
+            @foreach($page['toc_footers'] as $link)
+                <li>{!! $link !!}</li>
+            @endforeach
+        </ul>
+    @endif
+</div>
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        {!! $content !!}
+    </div>
+    <div class="dark-box">
         @if(isset($page['language_tabs']))
             <div class="lang-selector">
                 @foreach($page['language_tabs'] as $lang)
-                  <a href="#" data-language-name="{{$lang}}">{{$lang}}</a>
-                @endforeach
-            </div>
-        @endif
-        @if(isset($page['search']))
-            <div class="search">
-              <input type="text" class="search" id="input-search" placeholder="Search">
-            </div>
-            <ul class="search-results"></ul>
-        @endif
-      <div id="toc">
-      </div>
-        @if(isset($page['toc_footers']))
-            <ul class="toc-footer">
-                @foreach($page['toc_footers'] as $link)
-                  <li>{!! $link !!}</li>
-                @endforeach
-            </ul>
-        @endif
-    </div>
-    <div class="page-wrapper">
-      <div class="dark-box"></div>
-      <div class="content">
-          {!! $content !!}
-      </div>
-      <div class="dark-box">
-          @if(isset($page['language_tabs']))
-              <div class="lang-selector">
-                @foreach($page['language_tabs'] as $lang)
                     <a href="#" data-language-name="{{$lang}}">{{$lang}}</a>
                 @endforeach
-              </div>
-          @endif
-      </div>
+            </div>
+        @endif
     </div>
-  </body>
+</div>
+</body>
 </html>

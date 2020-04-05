@@ -4,15 +4,9 @@
   "keywords": [],
   "license": "Apache 2",
   "minimum-stability": "dev",
-  "authors": [
-    {
-      "name": "Marcel Pociot",
-      "email": "m.pociot@gmail.com"
-    }
-  ],
   "autoload": {
     "files": [
-      "includes/helpers.php"
+      "helpers.php"
     ],
     "psr-4": {
       "Mpociot\\Documentarian\\": "src/"
@@ -27,7 +21,8 @@
     "illuminate/view": "^6.0|^7.0",
     "mnapoli/front-yaml": "^1.6 ",
     "windwalker/renderer": "3.*",
-    "league/flysystem": "^2.0"
+    "league/flysystem": "^2.0",
+    "ext-json": "*"
   },
   "require-dev": {
     "phpunit/phpunit": "^8.5"

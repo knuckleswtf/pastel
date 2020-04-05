@@ -3,6 +3,7 @@
 namespace Mpociot\Documentarian;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Mni\FrontYAML\Parser;
 use Windwalker\Renderer\BladeRenderer;
 
@@ -14,77 +15,47 @@ class Documentarian
 {
 
     /**
-     * Returns a config value
-     *
-     * @param string $key
-     * @return mixed
+     * Generate the API documentation using the markdown and include files
      */
-    public function config($folder, $key = null)
+    public function generate(string $sourceFolder, ?string $destinationFolder = '')
     {
-        $config = include($folder . '/source/config.php');
+        if (Str::endsWith($sourceFolder, '.md')) {
+            // We're given just the path to a file, we'll use default assets
+            $sourceMarkdownFile = $sourceFolder;
+            $assetsFolder = __DIR__ . '/../resources';
+        } else {
+            if (!is_dir($sourceFolder)) {
+                throw new \InvalidArgumentException("Source folder $sourceFolder is not a directory.");
+            }
 
-        return is_null($key) ? $config : Arr::get($config, $key);
-    }
-
-    /**
-     * Create a new API documentation folder and copy all needed files/stubs
-     *
-     * @param $folder
-     */
-    public function create($folder)
-    {
-        $folder = $folder . '/source';
-        if (!is_dir($folder)) {
-            mkdir($folder, 0777, true);
-            mkdir($folder . '/../css');
-            mkdir($folder . '/../js');
-            mkdir($folder . '/includes');
-            mkdir($folder . '/assets');
+            // Valid source directory
+            $sourceMarkdownFile = $sourceFolder . '/index.md';
+            $assetsFolder = $sourceFolder;
         }
 
-        // copy stub files
-        copy(__DIR__ . '/../resources/stubs/index.md', $folder . '/index.md');
-        copy(__DIR__ . '/../resources/stubs/gitignore.stub', $folder . '/.gitignore');
-        copy(__DIR__ . '/../resources/stubs/includes/_errors.md', $folder . '/includes/_errors.md');
-        copy(__DIR__ . '/../resources/stubs/package.json', $folder . '/package.json');
-        copy(__DIR__ . '/../resources/stubs/gulpfile.js', $folder . '/gulpfile.js');
-        copy(__DIR__ . '/../resources/stubs/config.php', $folder . '/config.php');
-        copy(__DIR__ . '/../resources/stubs/js/all.js', $folder . '/../js/all.js');
-        copy(__DIR__ . '/../resources/stubs/css/style.css', $folder . '/../css/style.css');
+        $includesFolder = $sourceFolder . '/includes';
 
-        // copy resources
-        rcopy(__DIR__ . '/../resources/images/', $folder . '/assets/images');
-        rcopy(__DIR__ . '/../resources/js/', $folder . '/assets/js');
-        rcopy(__DIR__ . '/../resources/stylus/', $folder . '/assets/stylus');
-    }
-
-    /**
-     * Generate the API documentation using the markdown and include files
-     *
-     * @param $folder
-     * @return false|null
-     */
-    public function generate($folder)
-    {
-        $source_dir = $folder . '/source';
-
-        if (!is_dir($source_dir)) {
-            return false;
+        if (empty($destinationFolder)) {
+            // If no destination is supplied, place it in the parent of the source path
+            $destinationFolder = dirname($sourceFolder);
         }
 
         $parser = new Parser();
 
-        $document = $parser->parse(file_get_contents($source_dir . '/index.md'));
+        $document = $parser->parse(file_get_contents($sourceMarkdownFile));
 
         $frontmatter = $document->getYAML();
         $html = $document->getContent();
 
-        $renderer = new BladeRenderer([__DIR__ . '/../resources/views'], ['cache_path' => $source_dir . '/_tmp']);
+        $renderer = new BladeRenderer(
+            [__DIR__ . '/../resources/views'],
+            ['cache_path' => __DIR__ . '/_tmp']
+        );
 
         // Parse and include optional include markdown files
         if (isset($frontmatter['includes'])) {
             foreach ($frontmatter['includes'] as $include) {
-                if (file_exists($include_file = $source_dir . '/includes/_' . $include . '.md')) {
+                if (file_exists($include_file = $includesFolder . '/_' . $include . '.md')) {
                     $document = $parser->parse(file_get_contents($include_file));
                     $html .= $document->getContent();
                 }
@@ -93,14 +64,20 @@ class Documentarian
 
         $output = $renderer->render('index', [
             'page' => $frontmatter,
-            'content' => $html
+            'content' => $html,
         ]);
 
-        file_put_contents($folder . '/index.html', $output);
+        if (!is_dir($destinationFolder)) {
+            mkdir($destinationFolder, 0777, true);
+        }
+
+        file_put_contents($destinationFolder . '/index.html', $output);
 
         // Copy assets
-        rcopy($source_dir . '/assets/images/', $folder . '/images');
-        rcopy($source_dir . '/assets/stylus/fonts/', $folder . '/css/fonts');
+        rcopy($assetsFolder . '/images/', $destinationFolder . '/images');
+        rcopy($assetsFolder . '/css/', $destinationFolder . '/css');
+        rcopy($assetsFolder . '/js/', $destinationFolder . '/js');
+        rcopy($assetsFolder . '/fonts/', $destinationFolder . '/fonts');
     }
 
 }

@@ -14,63 +14,12 @@ class DocumentarianTest extends TestCase
         touch(__DIR__ . '/output/.gitkeep');
     }
 
-    public function test_creates_documentation_folder_and_copies_assets()
-    {
-        $outputDir = __DIR__ . '/output';
-
-        $documentarian = new Documentarian();
-        $documentarian->create($outputDir);
-
-        // Test for folders
-
-        $this->assertTrue(is_dir($outputDir . '/source'));
-        $this->assertTrue(is_dir($outputDir . '/source/includes'));
-        $this->assertTrue(is_dir($outputDir . '/source/assets'));
-        $this->assertTrue(is_dir($outputDir . '/css'));
-        $this->assertTrue(is_dir($outputDir . '/js'));
-
-        // Test that stubbed files exist
-        $this->assertFileExists($outputDir . '/source/index.md');
-        $this->assertFileExists($outputDir . '/source/.gitignore');
-        $this->assertFileExists($outputDir . '/source/includes/_errors.md');
-        $this->assertFileExists($outputDir . '/source/package.json');
-        $this->assertFileExists($outputDir . '/source/gulpfile.js');
-        $this->assertFileExists($outputDir . '/source/config.php');
-        $this->assertFileExists($outputDir . '/js/all.js');
-        $this->assertFileExists($outputDir . '/css/style.css');
-
-        // Test that resources were copied
-        $jsFiles = glob_recursive(__DIR__ . '/../resources/js/*');
-        foreach ($jsFiles as $jsFile) {
-            $file = str_replace(__DIR__ . '/../resources/', $outputDir . '/source/assets/', $jsFile);
-            if (!is_dir($jsFile)) {
-                $this->assertFileExists($file);
-            }
-        }
-
-        $cssFiles = glob_recursive(__DIR__ . '/../resources/stylus/*');
-        foreach ($cssFiles as $cssFile) {
-            $file = str_replace(__DIR__ . '/../resources/', $outputDir . '/source/assets/', $cssFile);
-            if (!is_dir($cssFile)) {
-                $this->assertFileExists($file);
-            }
-        }
-
-        $imageFiles = glob_recursive(__DIR__ . '/../resources/images/*');
-        foreach ($imageFiles as $imageFile) {
-            $file = str_replace(__DIR__ . '/../resources/', $outputDir . '/source/assets/', $imageFile);
-            if (!is_dir($imageFile)) {
-                $this->assertFileExists($file);
-            }
-        }
-    }
-
     public function test_cannot_generate_html_if_folder_does_not_exist()
     {
         $outputDir = __DIR__ . '/output';
 
         $documentarian = new Documentarian();
-        $this->assertFalse($documentarian->generate($outputDir));
+        $this->assertThr($documentarian->generate($outputDir));
     }
 
     public function test_can_generate_html()
@@ -101,18 +50,6 @@ class DocumentarianTest extends TestCase
         $documentarian->generate($outputDir);
         $this->assertFilesHaveSameContentIgnoringNewlines($outputDir . '/index.html', $assertionDir . '/test4.html');
 
-    }
-
-    public function test_can_get_config_value()
-    {
-        $outputDir = __DIR__ . '/output';
-
-        $documentarian = new Documentarian();
-        $documentarian->create($outputDir);
-        
-        $this->assertTrue(is_array($documentarian->config($outputDir)));
-        $this->assertEquals('git', $documentarian->config($outputDir, 'deployment.type'));
-        $this->assertEquals('gh-pages', $documentarian->config($outputDir, 'deployment.branch'));
     }
 
     public function assertFilesHaveSameContentIgnoringNewlines($pathToExpected, $pathToActual)

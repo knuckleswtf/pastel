@@ -43,15 +43,14 @@ if (!function_exists('output')) {
 if (!function_exists('rcopy')) {
     function rcopy($src, $dest)
     {
-
         // If source is not a directory stop processing
         if (!is_dir($src)) return false;
 
         // If the destination directory does not exist create it
         if (!is_dir($dest)) {
-            if (!mkdir($dest)) {
+            if (!mkdir($dest, 0777, true)) {
                 // If the destination directory could not be created stop processing
-                return false;
+                throw new Exception("Failed to create target directory: $dest");
             }
         }
 
@@ -81,7 +80,7 @@ function glob_recursive($pattern, $flags = 0)
 function deleteDirectoryAndContents($dir)
 {
     $dir = ltrim($dir, '/');
-    $adapter = new LocalFilesystemAdapter(realpath(__DIR__ . '/../'));
+    $adapter = new LocalFilesystemAdapter(realpath(__DIR__ ));
     $fs = new Filesystem($adapter);
     $fs->deleteDirectory($dir);
 }
@@ -96,4 +95,25 @@ function deleteDirectoryAndContents($dir)
 function getFileContentsIgnoringNewlines($path)
 {
     return str_replace("\r\n", "\n", file_get_contents($path));
+}
+
+function get_css_link_tag($name)
+{
+    return <<<HTML
+    <link rel="stylesheet" href="css/$name.css" />
+    HTML;
+}
+
+function get_js_script_tag($name)
+{
+    return <<<HTML
+    <script src="js/$name.js"></script>
+    HTML;
+}
+
+function get_image_tag($name)
+{
+    return <<<HTML
+    <img src="images/$name.png" />
+    HTML;
 }
