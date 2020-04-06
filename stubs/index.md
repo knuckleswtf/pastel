@@ -25,6 +25,9 @@ search: true
 # If you want a logo on the sidebar, set this to the path to the logo image file. Must be either a URL or a path relative to the docs destination from a browser.
 logo: false
 
+# Date the docs were last updated. Leave this as empty to use the last time the file was modified
+last_updated: ''
+
 ---
 
 # Introduction

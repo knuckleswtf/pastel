@@ -52,7 +52,7 @@
         </ul>
     @endif
         <ul class="toc-footer">
-            <li>Last updated on {{ $page['last_updated'] }}</li>
+            <li>Last updated: {{ $page['last_updated'] }}</li>
         </ul>
 </div>
 <div class="page-wrapper">

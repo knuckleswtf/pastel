@@ -61,9 +61,7 @@ class Pastel
             }
         }
 
-        if (isset($frontmatter['last_updated'])) {
-            $frontmatter['last_updated'] = date("F j Y", strtotime($frontmatter['last_updated']));
-        } else {
+        if (empty($frontmatter['last_updated'])) {
             $frontmatter['last_updated'] = date("F j Y", filemtime($sourceMarkdownFile));
         }
 
