@@ -1,7 +1,11 @@
 {
-  "name": "mpociot/documentarian",
-  "description": "",
-  "keywords": [],
+  "name": "shalvah/pastel",
+  "description": "Generate beautiful API documentation from Markdown.",
+  "keywords": [
+    "documentation",
+    "generation",
+    "markdown"
+  ],
   "license": "Apache 2",
   "minimum-stability": "dev",
   "autoload": {
@@ -9,14 +13,14 @@
       "helpers.php"
     ],
     "psr-4": {
-      "Mpociot\\Documentarian\\": "src/"
+      "Shalvah\\Pastel\\": "src/"
     }
   },
   "bin": [
-    "documentarian"
+    "pastel"
   ],
   "require": {
-    "php": ">=7.3",
+    "php": ">=7.1",
     "mnapoli/silly": "~1.0",
     "illuminate/view": "^6.0|^7.0",
     "mnapoli/front-yaml": "^1.6 ",

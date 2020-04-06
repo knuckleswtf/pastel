@@ -9,7 +9,7 @@
          processIsolation="false"
          stopOnFailure="false">
     <testsuites>
-        <testsuite name="Documentarian Test Suite">
+        <testsuite name="Pastel Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>

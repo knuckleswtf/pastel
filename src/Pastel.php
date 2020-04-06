@@ -1,12 +1,12 @@
 <?php
 
-namespace Mpociot\Documentarian;
+namespace Shalvah\Pastel;
 
 use Illuminate\Support\Str;
 use Mni\FrontYAML\Parser;
 use Windwalker\Renderer\BladeRenderer;
 
-class Documentarian
+class Pastel
 {
 
     /**
