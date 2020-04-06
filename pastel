@@ -17,9 +17,20 @@ $pastel = new Pastel();
 
 $app = new Application('Pastel', 'v0.1.0');
 
-$app->command('generate [source] [destination]', function ($source, $destination) use ($pastel) {
-    $pastel->generate($source, $destination);
-    info("Generated documentation from $source to $destination.");
-});
+$app->command(
+    'generate source [destination] [--logo=]',
+    function ($source, $destination, $logo = false) use ($pastel) {
+        $config = compact('logo');
+        $pastel->generate($source, $destination, $config);
+        info("Generated documentation from $source to $destination.");
+    })
+    ->descriptions(
+        'Generate HTML documentation from provided Markdown file or source folder',
+        [
+        'source' => 'Path to Markdown docs file or source folder containing Markdown + assets.',
+        'destination' => 'Path to output generated doc (HTML + assets) to.',
+        '--logo' => 'Path to a file to use as logo image in generated doc.',
+    ]
+    );
 
 $app->run();
