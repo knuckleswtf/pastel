@@ -26,8 +26,8 @@
       </span>
 </a>
 <div class="tocify-wrapper">
-    @if($config['logo'] != false)
-    <img src="{{ $config['logo'] }}" alt="logo" class="logo" width="230px"/>
+    @if($page['logo'] != false)
+    <img src="{{ $page['logo'] }}" alt="logo" class="logo" width="230px"/>
     @endif
     @isset($page['language_tabs'])
         <div class="lang-selector">

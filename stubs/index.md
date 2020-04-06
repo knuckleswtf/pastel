@@ -1,20 +1,30 @@
 ---
+# Page title. Only shown on the browser tab, not actual page content 
 title: API Reference
 
-language_tabs: # must be one of https://git.io/vQNgJ
+# Languages you're using in the code samples. Please list them in the same order your code blocks are.
+# Must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
+language_tabs: 
   - ruby
   - python
   - bash
   - javascript
 
+# HTMl to add in the footer of the sidebar(table of contents)
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Pastel</a>
+  - <a href='https://github.com/shalvah/pastel'>Documentation Powered by Pastel</a>
 
+# Other Markdown files to include. They will be appended to this.
 includes:
   - errors
 
+# Whether to include a search box
 search: true
+
+# If you want a logo on the sidebar, set this to the path to the logo image file. Must be either a URL or a path relative to the docs destination from a browser.
+logo: false
+
 ---
 
 # Introduction
@@ -23,7 +33,7 @@ Welcome to the Kittn API! You can use our API to access Kittn API endpoints, whi
 
 We have language bindings in Bash, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+This example API documentation page was borrowed from [Slate](https://github.com/slatedocs/slate) and generated with [Pastel](https://github.com/shalvah/pastel). Feel free to edit it and use it as a base for your own API's documentation.
 
 # Authentication
 

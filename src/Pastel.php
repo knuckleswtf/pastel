@@ -67,10 +67,12 @@ class Pastel
             $frontmatter['last_updated'] = date("F j Y", filemtime($sourceMarkdownFile));
         }
 
+        // Allow overriding logo set in front matter from config
+        $frontmatter['logo'] = $config['logo'] ?: $frontmatter['logo'] ?? false;
+
         $output = $renderer->render('index', [
             'page' => $frontmatter,
             'content' => $html,
-            'config' => $config,
         ]);
 
         if (!is_dir($destinationFolder)) {
