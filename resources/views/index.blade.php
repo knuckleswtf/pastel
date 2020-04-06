@@ -22,12 +22,12 @@
 <a href="#" id="nav-button">
       <span>
         NAV
-        {!! get_image_tag('navbar') !!}
+        {!! get_image_tag('images/navbar.png') !!}
       </span>
 </a>
 <div class="tocify-wrapper">
     @if($config['logo'] != false)
-    {!! get_image_tag("logo", 'logo') !!}
+    <img src="{{ $config['logo'] }}" alt="logo" class="logo" width="230px"/>
     @endif
     @isset($page['language_tabs'])
         <div class="lang-selector">

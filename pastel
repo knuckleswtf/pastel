@@ -29,7 +29,7 @@ $app->command(
         [
         'source' => 'Path to Markdown docs file or source folder containing Markdown + assets.',
         'destination' => 'Path to output generated doc (HTML + assets) to.',
-        '--logo' => 'Path to a file to use as logo image in generated doc.',
+        '--logo' => 'Path to a file to use as logo image in generated doc. Must be either a URL, an absolute path or a path relative to the destination.',
     ]
     );
 

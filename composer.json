@@ -20,7 +20,7 @@
     "pastel"
   ],
   "require": {
-    "php": ">=7.1",
+    "php": ">=7.3",
     "mnapoli/silly": "~1.0",
     "illuminate/view": "^6.0|^7.0",
     "mnapoli/front-yaml": "^1.6 ",
