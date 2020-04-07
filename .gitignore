@@ -2,6 +2,3 @@ composer.lock
 /vendor/
 .phpunit.result.cache
 .idea
-
-# I use this path for manual testing
-docs/

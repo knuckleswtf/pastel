@@ -109,7 +109,6 @@ class Pastel
     protected function getPageMetadata($frontmatter, $metadataOverrides = []): array
     {
         $metadata = Pastel::$defaultMetadata;
-        var_dump($metadataOverrides);
 
         // Merge manually so it's correct
         foreach ($metadata as $key => $value) {
