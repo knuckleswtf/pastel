@@ -21,6 +21,7 @@ class Pastel
         if (Str::endsWith($sourceFolder, '.md')) {
             // We're given just the path to a file, we'll use default assets
             $sourceMarkdownFile = $sourceFolder;
+            $sourceFolder = dirname($sourceMarkdownFile);
             $assetsFolder = __DIR__ . '/../resources';
         } else {
             if (!is_dir($sourceFolder)) {
@@ -32,11 +33,9 @@ class Pastel
             $assetsFolder = $sourceFolder;
         }
 
-        $includesFolder = $sourceFolder . '/includes';
-
         if (empty($destinationFolder)) {
-            // If no destination is supplied, place it in the parent of the source path
-            $destinationFolder = dirname($sourceFolder);
+            // If no destination is supplied, place it in the source folder
+            $destinationFolder = $sourceFolder;
         }
 
         $parser = new Parser();
@@ -53,12 +52,17 @@ class Pastel
 
         // Parse and include optional include markdown files
         if (isset($frontmatter['includes'])) {
-            foreach ($frontmatter['includes'] as $include) {
-                if (file_exists($include_file = $includesFolder . '/_' . $include . '.md')) {
-                    $document = $parser->parse(file_get_contents($include_file));
-                    $html .= $document->getContent();
+            $filePathsToInclude = collect($frontmatter['includes'])
+                ->map(function ($include) use ($sourceFolder) {
+                    return rtrim($sourceFolder, '/') . '/'. ltrim($include, '/');
+            });
+            $filePathsToInclude->each(function ($filePath) use ($parser, &$html) {
+                if (file_exists(realpath($filePath))) {
+                    $html .= $parser->parse(file_get_contents($filePath))->getContent();
+                } else {
+                    echo "Include file $filePath not found\n";
                 }
-            }
+            });
         }
 
         if (empty($frontmatter['last_updated'])) {

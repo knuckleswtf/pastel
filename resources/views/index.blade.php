@@ -70,11 +70,13 @@
         @endif
     </div>
 </div>
+@isset($page['language_tabs'])
 <script>
     $(function () {
         var languages = @json($page['language_tabs']);
         setupLanguages(languages);
     });
 </script>
+@endisset
 </body>
 </html>

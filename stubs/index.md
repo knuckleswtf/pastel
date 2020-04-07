@@ -2,22 +2,18 @@
 # Page title. Only shown on the browser tab, not actual page content 
 title: API Reference
 
-# Languages you're using in the code samples. Please list them in the same order your code blocks are.
-# Must be one of https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers
+# Languages to switch between in the code samples. Please list them in the same order your code blocks are.
+# Supported languages for highlighting: `bash`, `csharp`, `go`, `java`, `javascript`, `php`, `python`, `ruby`
 language_tabs: 
   - ruby
   - python
   - bash
   - javascript
 
-# HTMl to add in the footer of the sidebar(table of contents)
+# HTMl to add in the footer of the sidebar (table of contents)
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/shalvah/pastel'>Documentation Powered by Pastel</a>
-
-# Other Markdown files to include. They will be appended to this.
-includes:
-  - errors
+  - <a href='#'>Sign up for a developer key</a>
+  - <a href='https://github.com/shalvah/pastel'>Documentation powered by Pastel</a>
 
 # Whether to include a search box
 search: true
@@ -28,6 +24,10 @@ logo: false
 # Date the docs were last updated. Leave this as empty to use the last time the file was modified
 last_updated: ''
 
+# Other Markdown files to include. They will be appended to this file. Files are appended in the order listed.
+includes:
+- "./includes/errors.md"
+ 
 ---
 
 # Introduction
