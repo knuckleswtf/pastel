@@ -69,7 +69,7 @@ includes:
 - ./includes/errors.md
 ```
 
-- `last_updated`: The date on which the docs were last updated. Helpful so your users know if they're looking at something stale. Leave this empty and it will automatically be set to the last modified time of the Markdown file. If you want to set this manually, you can write whatever you want here. Pastel will render it as is.
+- `last_updated`: The date on which the docs were last updated. Helpful so your users know if they're looking at something stale. Leave this empty and it will automatically be set to the most recent time you editing your Markdown files (main + includes). If you want to set this manually, you can write whatever you want here. Pastel will render it as is.
 
 
 Most of these sections can be disabled in the generated documentation by omitting them from the front matter.
@@ -84,4 +84,3 @@ Nope.
 ## Todo
 - Custom favicon support
 - Override more front matter otpions from config/CLI
-- last_updated work with multiple files

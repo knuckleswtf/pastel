@@ -20,8 +20,8 @@ class Pastel
     {
         if (Str::endsWith($sourceFolder, '.md')) {
             // We're given just the path to a file, we'll use default assets
-            $sourceMarkdownFile = $sourceFolder;
-            $sourceFolder = dirname($sourceMarkdownFile);
+            $sourceMarkdownFilePath = $sourceFolder;
+            $sourceFolder = dirname($sourceMarkdownFilePath);
             $assetsFolder = __DIR__ . '/../resources';
         } else {
             if (!is_dir($sourceFolder)) {
@@ -29,7 +29,7 @@ class Pastel
             }
 
             // Valid source directory
-            $sourceMarkdownFile = $sourceFolder . '/index.md';
+            $sourceMarkdownFilePath = $sourceFolder . '/index.md';
             $assetsFolder = $sourceFolder;
         }
 
@@ -40,15 +40,10 @@ class Pastel
 
         $parser = new Parser();
 
-        $document = $parser->parse(file_get_contents($sourceMarkdownFile));
+        $document = $parser->parse(file_get_contents($sourceMarkdownFilePath));
 
         $frontmatter = $document->getYAML();
         $html = $document->getContent();
-
-        $renderer = new BladeRenderer(
-            [__DIR__ . '/../resources/views'],
-            ['cache_path' => __DIR__ . '/_tmp']
-        );
 
         // Parse and include optional include markdown files
         if (isset($frontmatter['includes'])) {
@@ -66,12 +61,22 @@ class Pastel
         }
 
         if (empty($frontmatter['last_updated'])) {
-            $frontmatter['last_updated'] = date("F j Y", filemtime($sourceMarkdownFile));
+            # Set last_updated to most recent time main or include files was modified
+            $timesLastUpdatedFiles = $filePathsToInclude->map(function ($filePath) {
+                $realPath = realpath($filePath);
+                return $realPath ? filemtime($realPath) : 0;
+            });
+            $timesLastUpdatedFiles->push(filemtime($sourceMarkdownFilePath));
+            $frontmatter['last_updated'] = date("F j Y H:i:s", $timesLastUpdatedFiles->max());
         }
 
         // Allow overriding logo set in front matter from config
         $frontmatter['logo'] = $config['logo'] ?: $frontmatter['logo'] ?? false;
 
+        $renderer = new BladeRenderer(
+            [__DIR__ . '/../resources/views'],
+            ['cache_path' => __DIR__ . '/_tmp']
+        );
         $output = $renderer->render('index', [
             'page' => $frontmatter,
             'content' => $html,
