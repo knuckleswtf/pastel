@@ -8,6 +8,17 @@ use Windwalker\Renderer\BladeRenderer;
 
 class Pastel
 {
+    public static $defaultMetadata = [
+        'title' => 'API Documentation',
+        'language_tabs' => [],
+        'toc_footers' => [
+            "<a href='https://github.com/shalvah/pastel'>Documentation powered by Pastel</a>",
+        ],
+        'search' => true,
+        'logo' => false,
+        'includes' => [],
+        'last_updated' => '',
+    ];
 
     /**
      * Generate the API documentation using the markdown and include files
@@ -15,7 +26,7 @@ class Pastel
     public function generate(
         string $sourceFolder,
         ?string $destinationFolder = '',
-        $config = ['logo' => false]
+        $metadataOverrides = []
     )
     {
         if (Str::endsWith($sourceFolder, '.md')) {
@@ -42,8 +53,8 @@ class Pastel
 
         $document = $parser->parse(file_get_contents($sourceMarkdownFilePath));
 
-        $frontmatter = $document->getYAML();
         $html = $document->getContent();
+        $frontmatter = $document->getYAML();
 
         // Parse and include optional include markdown files
         if (isset($frontmatter['includes'])) {
@@ -70,15 +81,15 @@ class Pastel
             $frontmatter['last_updated'] = date("F j Y H:i:s", $timesLastUpdatedFiles->max());
         }
 
-        // Allow overriding logo set in front matter from config
-        $frontmatter['logo'] = $config['logo'] ?: $frontmatter['logo'] ?? false;
+        // Allow overriding options set in front matter from config
+        $metadata = $this->getPageMetadata($frontmatter, $metadataOverrides);
 
         $renderer = new BladeRenderer(
             [__DIR__ . '/../resources/views'],
             ['cache_path' => __DIR__ . '/_tmp']
         );
         $output = $renderer->render('index', [
-            'page' => $frontmatter,
+            'page' => $metadata,
             'content' => $html,
         ]);
 
@@ -94,4 +105,25 @@ class Pastel
         rcopy($assetsFolder . '/js/', $destinationFolder . '/js');
         rcopy($assetsFolder . '/fonts/', $destinationFolder . '/fonts');
     }
+
+    protected function getPageMetadata($frontmatter, $metadataOverrides = []): array
+    {
+        $metadata = Pastel::$defaultMetadata;
+        var_dump($metadataOverrides);
+
+        // Merge manually so it's correct
+        foreach ($metadata as $key => $value) {
+            // Override default with values from front matter
+            if (isset($frontmatter[$key])) {
+                $metadata[$key] = $frontmatter[$key];
+            }
+            // And override that with values from config
+            if (isset($metadataOverrides[$key])) {
+
+                $metadata[$key] = $metadataOverrides[$key];
+            }
+        }
+        return $metadata;
+    }
+
 }

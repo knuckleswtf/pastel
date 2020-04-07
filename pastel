@@ -17,20 +17,33 @@ $pastel = new Pastel();
 
 $app = new Application('Pastel', 'v0.1.0');
 
+$arrayKeys = [
+    'language_tabs',
+    'toc_footers',
+    'includes',
+];
+
 $app->command(
-    'generate source [destination] [--logo=]',
-    function ($source, $destination, $logo = false) use ($pastel) {
-        $config = compact('logo');
-        $pastel->generate($source, $destination, $config);
+    'generate source [destination] [--metadata=]*',
+    function ($source, $destination, $metadata = []) use ($arrayKeys, $pastel) {
+        $overrides = [];
+        foreach ($metadata as $item) {
+            [$key, $value] = explode('=', $item);
+            if (in_array($key, $arrayKeys)) {
+                $value = explode(',', $value);
+            }
+            $overrides[$key] = $value;
+        };
+        $pastel->generate($source, $destination, $overrides);
         info("Generated documentation from $source to $destination.");
     })
     ->descriptions(
         'Generate HTML documentation from provided Markdown file or source folder',
         [
-        'source' => 'Path to Markdown docs file or source folder containing Markdown + assets.',
-        'destination' => 'Path to output generated doc (HTML + assets) to.',
-        '--logo' => 'Path to a file to use as logo image in generated doc. Must be either a URL or a path relative to the docs destination from a browser.',
-    ]
+            'source' => 'Path to Markdown docs file or source folder containing Markdown + assets.',
+            'destination' => 'Path to output generated doc (HTML + assets) to.',
+            '--metadata' => 'Override the values set in the frontmatter.',
+        ]
     );
 
 $app->run();
