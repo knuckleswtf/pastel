@@ -75,12 +75,30 @@ includes:
 Most of these sections can be disabled in the generated documentation by omitting them from the front matter.
 
 ### How do I convert my Markdown file to HTML docs?
+If you've installed this using Composer, you can just run the CLI script (`vendor/bin/pastel`). Here's how you'd use it:
+
+```bash
+vendor/bin/pastel generate vendor/shalvah/pastel/stubs/index.md docs
+```
+
+This will generate a new API documentation using the sample file included with this project (stubs/index.md) and place the output in your docs/ directory (it will create it if it doesn't exist). You should replace the path to the source Markdown file with the path to your own Markdown file when you're ready.
+
+```bash
+vendor/bin/pastel generate docs_source/index.md docs
+```
+
+You can also call Pastel from PHP. This is especially useful if you're building a tool on top of this. Here's how you'd use it:
+
+```php
+$pastel = new Shalvah\Pastel\Pastel();
+$pastel->generate("docs_source/index.md", "docs");
+```
 
 ### Do I have to put all my docs in a single file?
-Nope.
+Nope. You can split them across multiple files, and use the `includes` key in the front matter of the main file to append them.
 
-
+## You might be interested in...
 
 ## Todo
 - Custom favicon support
-- Override more front matter otpions from config/CLI
+- Override more front matter options from config/CLI
