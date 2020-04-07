@@ -23,7 +23,7 @@ Pastel's Markdown syntax is borrowed from Slate's, so we'll refer you to the Sla
 #### The content
 Your Markdown file should contain your docs, written as you like. THere's no set format, but you can start with an introduction, talk about authentication and any general details, then describe each endpoint in its own section. Write example requests and responses using code blocks, use tables to describe request and response parameters.
  
- There's a good example in the included example Markdown ([stubs/index.md](./stubs/index.md)) and the resulting HTML output ([stubs/output/index.html](./stubs/output/index.html)).
+ There's a good example in the included example Markdown ([stubs/index.md](./stubs/index.md)) and the resulting HTML output ([stubs/docs/index.html](./stubs/docs/index.html)).
 
 For a full explanation of the supported Markdown syntax, see [How to Edit Slate Markdown files](https://github.com/slatedocs/slate/wiki/Markdown-Syntax)
 
@@ -71,7 +71,6 @@ includes:
 
 - `last_updated`: The date on which the docs were last updated. Helpful so your users know if they're looking at something stale. Leave this empty and it will automatically be set to the most recent time you editing your Markdown files (main + includes). If you want to set this manually, you can write whatever you want here. Pastel will render it as is.
 
-
 Most of these sections can be disabled in the generated documentation by omitting them from the front matter.
 
 ### How do I convert my Markdown file to HTML docs?
@@ -87,6 +86,12 @@ This will generate a new API documentation using the sample file included with t
 vendor/bin/pastel generate docs_source/index.md docs
 ```
 
+You can also pass in metadata values to override the ones set in the front matter:
+
+```bash
+vendor/bin/pastel generate docs_source/index.md docs --metadata logo=https://slatedocs.github.io/slate/images/logo.png --metadata toc_footers="<a>First</a>,<a>Second</a>"
+```
+
 You can also call Pastel from PHP. This is especially useful if you're building a tool on top of this. Here's how you'd use it:
 
 ```php
@@ -94,11 +99,8 @@ $pastel = new Shalvah\Pastel\Pastel();
 $pastel->generate("docs_source/index.md", "docs");
 ```
 
-### Do I have to put all my docs in a single file?
-Nope. You can split them across multiple files, and use the `includes` key in the front matter of the main file to append them.
-
-## You might be interested in...
+## You might also like...
+- [laravel-apidoc-generator](https://github.com/mpociot/laravel-apidoc-generator): Generate documentation for your Laravel APIs from your codebase. Built by the creator of Documentarian and maintained by the creator of Pastel. Powered by Pastel (soon).
 
 ## Todo
 - Custom favicon support
-- Override more front matter options from config/CLI
