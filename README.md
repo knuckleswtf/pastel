@@ -13,6 +13,12 @@ Pastel (pre-release) is a PHP tool to generate beautiful documentation from Mark
 
 This project is a fork of [Documentarian](https://github.com/shalvah/pastel), which is itself a PHP port of [Slate](https://github.com/tripit/slate), the API documentation tool.
 
+## Table of contents
+- [Installation](#installation)
+- [Usage](#usage)
+  - [How do I write my docs in Markdown?](#how-do-i-write-my-docs-in-markdown)
+  - [How do I convert my Markdown file to HTML docs?](#how-do-i-convert-my-markdown-file-to-html-docs)
+- [You might also like...](#you-might-also-like)
 
 ## Installation
 ```bash
@@ -23,10 +29,10 @@ composer require shalvah/pastel
 Pastel is like Documentarian and Slate, but simpler and with a somewhat different paradigm. You shouldn't need to write any PHP, just Markdown and maybe HTML. Here's what you need to know:
 
 ### How do I write my docs in Markdown?
-Pastel's Markdown syntax is borrowed from Slate's, so we'll refer you to the Slate wiki as needed. Here are the key parts:
+Start off with a single Markdown file. There are two parts:
 
 #### The content
-Your Markdown file should contain your docs, written as you like. THere's no set format, but you can start with an introduction, talk about authentication and any general details, then describe each endpoint in its own section. Write example requests and responses using code blocks, use tables to describe request and response parameters.
+Your Markdown file should contain your docs, written as you like. There's no set format, but you can start with an introduction, talk about authentication and any general details, then describe each endpoint in its own section. Write example requests and responses using code blocks, use tables to describe request and response parameters.
  
  There's a good example in the included example Markdown ([stubs/index.md](./stubs/index.md)) and the resulting HTML output ([docs/index.html](./docs/index.html)).
 
@@ -74,7 +80,7 @@ includes:
 - ./includes/errors.md
 ```
 
-- `last_updated`: The date on which the docs were last updated. Helpful so your users know if they're looking at something stale. Leave this empty and it will automatically be set to the most recent time you editing your Markdown files (main + includes). If you want to set this manually, you can write whatever you want here. Pastel will render it as is.
+- `last_updated`: The date on which the docs were last updated. Helpful so your users know if they're looking at something stale. Leave this empty and it will automatically be set to the most recent time you edited your Markdown files (main or includes). If you want to set this manually, you can write whatever you want here. Pastel will render it as is.
 
 Most of these sections can be disabled in the generated documentation by omitting them from the front matter.
 
@@ -82,14 +88,10 @@ Most of these sections can be disabled in the generated documentation by omittin
 If you've installed this using Composer, you can just run the CLI script (`vendor/bin/pastel`). Here's how you'd use it:
 
 ```bash
-vendor/bin/pastel generate vendor/shalvah/pastel/stubs/index.md docs
-```
-
-This will generate a new API documentation using the sample file included with this project (stubs/index.md) and place the output in your docs/ directory (it will create it if it doesn't exist). You should replace the path to the source Markdown file with the path to your own Markdown file when you're ready.
-
-```bash
 vendor/bin/pastel generate docs_source/index.md docs
 ```
+
+This will generate a new API documentation from the file docs_source/index.md and place the output in your docs/ directory. You can replace docs_source/index.md with vendor/shalvah/pastel/stubs/index.md to use the sample API included with this package.
 
 You can also pass in metadata values to override the ones set in the front matter:
 
@@ -101,7 +103,7 @@ You can also call Pastel from PHP. This is especially useful if you're building 
 
 ```php
 $pastel = new Shalvah\Pastel\Pastel();
-$pastel->generate("docs_source/index.md", "docs");
+$pastel->generate("docs_source/index.md", "docs", $metadataOverrides);
 ```
 
 ## You might also like...
