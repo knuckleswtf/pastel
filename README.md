@@ -1,10 +1,15 @@
 # Pastel
 
-Generate beautiful API documentation from Markdown.
-
-
 ![image](http://img.shields.io/packagist/v/shalvah/pastel.svg?style=flat)
 [![Build Status](https://travis-ci.org/shalvah/pastel.svg?branch=master)](https://travis-ci.org/shalvah/pastel)
+
+Pastel is a PHP tool to generate beautiful documentation from Markdown. [Here's what the output looks like.](https://shalvah.github.io/pastel)
+
+<p align="center">
+  <img src="./screenshots/pastel-screenshot-1.png">
+  
+  <img src="./screenshots/pastel-screenshot-2.png">
+</p>
 
 This project is a fork of [Documentarian](https://github.com/shalvah/pastel), which is itself a PHP port of [Slate](https://github.com/tripit/slate), the API documentation tool.
 
@@ -23,7 +28,7 @@ Pastel's Markdown syntax is borrowed from Slate's, so we'll refer you to the Sla
 #### The content
 Your Markdown file should contain your docs, written as you like. THere's no set format, but you can start with an introduction, talk about authentication and any general details, then describe each endpoint in its own section. Write example requests and responses using code blocks, use tables to describe request and response parameters.
  
- There's a good example in the included example Markdown ([stubs/index.md](./stubs/index.md)) and the resulting HTML output ([stubs/docs/index.html](./stubs/docs/index.html)).
+ There's a good example in the included example Markdown ([stubs/index.md](./stubs/index.md)) and the resulting HTML output ([docs/index.html](./docs/index.html)).
 
 For a full explanation of the supported Markdown syntax, see [How to Edit Slate Markdown files](https://github.com/slatedocs/slate/wiki/Markdown-Syntax)
 
