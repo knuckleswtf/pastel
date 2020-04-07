@@ -6,8 +6,6 @@
 Pastel (pre-release) is a PHP tool to generate beautiful documentation from Markdown. [Here's what the output looks like.](https://shalvah.github.io/pastel)
 
 <p align="center">
-  <img src="./screenshots/pastel-screenshot-1.png">
-  
   <img src="./screenshots/pastel-screenshot-2.png">
 </p>
 
