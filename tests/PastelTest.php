@@ -1,6 +1,6 @@
 <?php
 
-use Shalvah\Pastel\Pastel;
+use Knuckles\Pastel\Pastel;
 use PHPUnit\Framework\TestCase;
 
 class PastelTest extends TestCase

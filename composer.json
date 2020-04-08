@@ -13,7 +13,7 @@
       "helpers.php"
     ],
     "psr-4": {
-      "Shalvah\\Pastel\\": "src/"
+      "Knuckles\\Pastel\\": "src/"
     }
   },
   "bin": [

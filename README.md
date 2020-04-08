@@ -100,7 +100,7 @@ vendor/bin/pastel generate docs_source/index.md docs --metadata logo=https://sla
 You can also call Pastel from PHP. This is especially useful if you're building a tool on top of this. Here's how you'd use it:
 
 ```php
-$pastel = new Shalvah\Pastel\Pastel();
+$pastel = new Knuckles\Pastel\Pastel();
 $pastel->generate("docs_source/index.md", "docs", $metadataOverrides);
 ```
 

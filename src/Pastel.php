@@ -1,6 +1,6 @@
 <?php
 
-namespace Shalvah\Pastel;
+namespace Knuckles\Pastel;
 
 use Illuminate\Support\Str;
 use Mni\FrontYAML\Parser;

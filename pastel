@@ -10,7 +10,7 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require __DIR__ . '/../../autoload.php';
 }
 
-use Shalvah\Pastel\Pastel;
+use Knuckles\Pastel\Pastel;
 use Silly\Application;
 
 $pastel = new Pastel();
