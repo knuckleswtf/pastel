@@ -1,15 +1,15 @@
 # Pastel
 
-![image](http://img.shields.io/packagist/v/shalvah/pastel.svg?style=flat)
-[![Build Status](https://travis-ci.org/shalvah/pastel.svg?branch=master)](https://travis-ci.org/shalvah/pastel)
+![image](http://img.shields.io/packagist/v/knuckleswtf/pastel.svg?style=flat)
+[![Build Status](https://travis-ci.org/knuckleswtf/pastel.svg?branch=master)](https://travis-ci.org/knuckleswtf/pastel)
 
-Pastel (pre-release) is a PHP tool to generate beautiful documentation from Markdown. [Here's what the output looks like.](https://knuckleswtf.github.io/pastel)
+Pastel is a PHP tool to generate beautiful documentation from Markdown. [Here's what the output looks like.](https://knuckleswtf.github.io/pastel)
 
 <p align="center">
   <img src="./screenshots/pastel-screenshot-2.png">
 </p>
 
-This project is a fork of [Documentarian](https://github.com/shalvah/pastel), which is itself a PHP port of [Slate](https://github.com/tripit/slate), the API documentation tool.
+This project is a fork of [Documentarian](https://github.com/knuckleswtf/pastel), which is itself a PHP port of [Slate](https://github.com/tripit/slate), the API documentation tool.
 
 ## Table of contents
 - [Installation](#installation)
@@ -20,7 +20,7 @@ This project is a fork of [Documentarian](https://github.com/shalvah/pastel), wh
 
 ## Installation
 ```bash
-composer require shalvah/pastel
+composer require knuckleswtf/pastel
 ```
  
 ## Usage
@@ -89,7 +89,7 @@ If you've installed this using Composer, you can just run the CLI script (`vendo
 vendor/bin/pastel generate docs_source/index.md docs
 ```
 
-This will generate a new API documentation from the file docs_source/index.md and place the output in your docs/ directory. You can replace docs_source/index.md with vendor/shalvah/pastel/stubs/index.md to use the sample API included with this package.
+This will generate a new API documentation from the file docs_source/index.md and place the output in your docs/ directory. You can replace docs_source/index.md with vendor/knuckleswtf/pastel/stubs/index.md to use the sample API included with this package.
 
 You can also pass in metadata values to override the ones set in the front matter:
 

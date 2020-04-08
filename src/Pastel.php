@@ -12,7 +12,7 @@ class Pastel
         'title' => 'API Documentation',
         'language_tabs' => [],
         'toc_footers' => [
-            "<a href='https://github.com/shalvah/pastel'>Documentation powered by Pastel</a>",
+            "<a href='https://github.com/knuckleswtf/pastel'>Documentation powered by Pastel</a>",
         ],
         'search' => true,
         'logo' => false,
