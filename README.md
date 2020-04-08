@@ -3,7 +3,7 @@
 ![image](http://img.shields.io/packagist/v/shalvah/pastel.svg?style=flat)
 [![Build Status](https://travis-ci.org/shalvah/pastel.svg?branch=master)](https://travis-ci.org/shalvah/pastel)
 
-Pastel (pre-release) is a PHP tool to generate beautiful documentation from Markdown. [Here's what the output looks like.](https://shalvah.github.io/pastel)
+Pastel (pre-release) is a PHP tool to generate beautiful documentation from Markdown. [Here's what the output looks like.](https://knuckleswtf.github.io/pastel)
 
 <p align="center">
   <img src="./screenshots/pastel-screenshot-2.png">
