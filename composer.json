@@ -6,7 +6,7 @@
     "generation",
     "markdown"
   ],
-  "license": "Apache 2",
+  "license": "MIT",
   "minimum-stability": "dev",
   "autoload": {
     "files": [
