@@ -168,10 +168,14 @@ class PastelTest extends TestCase
         $this->assertStringContainsString("Yay! I was included.", $source);
     }
 
-    public function assertFilesHaveSameContentIgnoringNewlines($pathToExpected, $pathToActual)
+    /* Will implement when Clara supports capturing output
+    public function test_logs_warning_for_missing_include_files()
     {
-        $actual = getFileContentsIgnoringNewlines($pathToActual);
-        $expected = getFileContentsIgnoringNewlines($pathToExpected);
-        $this->assertSame($expected, $actual);
-    }
+        $this->pastel->generate(
+            __DIR__ . '/files/test-with-missing-includes.md',
+            $this->outputDir . '/with-missing-includes'
+        );
+
+        $output = [];
+    }*/
 }
