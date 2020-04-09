@@ -16,6 +16,11 @@
       "Knuckles\\Pastel\\": "src/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Knuckles\\Pastel\\Tests\\": "tests/"
+    }
+  },
   "bin": [
     "pastel"
   ],
