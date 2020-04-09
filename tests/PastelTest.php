@@ -1,5 +1,7 @@
 <?php
 
+namespace Knuckles\Pastel\Tests;
+
 use Knuckles\Pastel\Pastel;
 use PHPUnit\Framework\TestCase;
 use Shalvah\Clara\Clara;
