@@ -35,7 +35,6 @@ $app->command(
             $overrides[$key] = $value;
         };
         $pastel->generate($source, $destination, $overrides);
-        info("Generated documentation from $source to $destination.");
     })
     ->descriptions(
         'Generate HTML documentation from provided Markdown file or source folder',

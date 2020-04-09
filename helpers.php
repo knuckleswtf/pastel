@@ -4,35 +4,6 @@ use League\Flysystem\Local\LocalFilesystemAdapter;
 use League\Flysystem\Filesystem;
 
 /**
- * Output the given text to the console.
- *
- * @param  string $output
- * @return void
- */
-if (!function_exists('info')) {
-    function info($output)
-    {
-        output('<info>' . $output . '</info>');
-    }
-}
-
-/**
- * Output the given text to the console.
- *
- * @param  string $output
- * @return void
- */
-if (!function_exists('output')) {
-    function output($output)
-    {
-        if (isset($_ENV['APP_ENV']) && $_ENV['APP_ENV'] == 'testing') {
-            return;
-        }
-        (new Symfony\Component\Console\Output\ConsoleOutput)->writeln($output);
-    }
-}
-
-/**
  * Recursively copy files from one directory to another
  *
  * @param String $src - Source of files being moved

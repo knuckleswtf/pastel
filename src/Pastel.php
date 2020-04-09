@@ -4,6 +4,7 @@ namespace Knuckles\Pastel;
 
 use Illuminate\Support\Str;
 use Mni\FrontYAML\Parser;
+use Shalvah\Clara\Clara;
 use Windwalker\Renderer\BladeRenderer;
 
 class Pastel
@@ -66,7 +67,7 @@ class Pastel
                 if (file_exists(realpath($filePath))) {
                     $html .= $parser->parse(file_get_contents($filePath))->getContent();
                 } else {
-                    echo "Include file $filePath not found\n";
+                    Clara::warn("Include file $filePath not found.");
                 }
             });
         }
@@ -104,6 +105,8 @@ class Pastel
         rcopy($assetsFolder . '/css/', $destinationFolder . '/css');
         rcopy($assetsFolder . '/js/', $destinationFolder . '/js');
         rcopy($assetsFolder . '/fonts/', $destinationFolder . '/fonts');
+
+        Clara::success("Generated documentation from $sourceMarkdownFilePath to $destinationFolder.");
     }
 
     protected function getPageMetadata($frontmatter, $metadataOverrides = []): array
