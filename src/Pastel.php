@@ -79,7 +79,7 @@ class Pastel
                 return $realPath ? filemtime($realPath) : 0;
             });
             $timesLastUpdatedFiles->push(filemtime($sourceMarkdownFilePath));
-            $frontmatter['last_updated'] = date("F j Y H:i:s", $timesLastUpdatedFiles->max());
+            $frontmatter['last_updated'] = date("F j Y", $timesLastUpdatedFiles->max());
         }
 
         // Allow overriding options set in front matter from config
