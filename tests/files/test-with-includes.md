@@ -11,9 +11,9 @@ toc_footers:
   - <a href='http://github.com/mpociot/whiteboard'>Documentation Powered by Whiteboard</a>
 
 includes:
-  - errors
+  - partials/include_me.md
+  - partials/nonexistent.md
 
-search: true
 ---
 
 # Introduction

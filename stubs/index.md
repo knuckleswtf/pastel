@@ -15,9 +15,6 @@ toc_footers:
   - <a href='#'>Sign up for a developer key</a>
   - <a href='https://github.com/knuckleswtf/pastel'>Documentation powered by Pastel</a>
 
-# Whether to include a search box
-search: true
-
 # If you want a logo on the sidebar, set this to the path to the logo image file. Must be either a URL or a path relative to the docs destination from a browser.
 logo: false
 

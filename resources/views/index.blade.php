@@ -45,13 +45,13 @@
     </ul>
 
     @if(isset($page['toc_footers']))
-        <ul class="toc-footer">
+        <ul class="toc-footer" id="toc-footer">
             @foreach($page['toc_footers'] as $link)
                 <li>{!! $link !!}</li>
             @endforeach
         </ul>
     @endif
-        <ul class="toc-footer">
+        <ul class="toc-footer" id="last-updated">
             <li>Last updated: {{ $page['last_updated'] }}</li>
         </ul>
 </div>

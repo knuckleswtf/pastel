@@ -13,6 +13,10 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Removed
 
+## 1.0.0 - Wednesday, 8 April 2020 ([compare to previous](https://github.com/mpociot/laravel-apidoc-generator/compare/0.2.0...1.0.0))
+### Modified
+- Switch to Clara for console output
+
 ## 0.2.0 - Wednesday, 8 April 2020 ([compare to previous](https://github.com/mpociot/laravel-apidoc-generator/compare/0.1.0...0.2.0))
 ### Modified
 - Switch namespaces

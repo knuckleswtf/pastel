@@ -1,6 +1,6 @@
-# Pastel
+# Pastel 🎨
 
-![image](http://img.shields.io/packagist/v/knuckleswtf/pastel.svg?style=flat)
+[![Latest release](http://img.shields.io/packagist/v/knuckleswtf/pastel.svg?style=flat)](https://packagist.org/packages/knuckleswtf/pastel)
 [![Build Status](https://travis-ci.org/knuckleswtf/pastel.svg?branch=master)](https://travis-ci.org/knuckleswtf/pastel)
 
 Pastel is a PHP tool to generate beautiful documentation from Markdown. [Here's what the output looks like.](https://knuckleswtf.github.io/pastel)
@@ -55,8 +55,6 @@ The front matter provides "meta" information about a Markdown document's content
 - `language_tabs`: Array of languages to switch between in the code samples. Please list them in the same order your code blocks are. Supported languages for highlighting: `bash`, `csharp`, `go`, `java`, `javascript`, `php`, `python`, `ruby`.  You can use other languages too, but you won't get syntax hghlighting. 
 
 - `toc_footers`: Array of items to add below your table of contents. See [Slate's docs](https://github.com/slatedocs/slate/wiki/External-Links-in-the-ToC).
-
-- `search`: Set this to `true` if you'd like to include a search box above the table of contents so users can search through your headings (why wouldn't you?🙄).
 
 - `logo`: If you'd like to use a logo on the sidebar, set this to the path to the logo image file. Must be either a URL or a path relative to the docs destination from a browser. The image will have to fit in a 230px width box (the sidebar), so make sure it scales nicely.
 
