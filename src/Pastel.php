@@ -15,7 +15,6 @@ class Pastel
         'toc_footers' => [
             "<a href='https://github.com/knuckleswtf/pastel'>Documentation powered by Pastel</a>",
         ],
-        'search' => true,
         'logo' => false,
         'includes' => [],
         'last_updated' => '',
@@ -56,6 +55,8 @@ class Pastel
 
         $html = $document->getContent();
         $frontmatter = $document->getYAML();
+
+        $filePathsToInclude = collect([]);
 
         // Parse and include optional include markdown files
         if (isset($frontmatter['includes'])) {
@@ -121,10 +122,10 @@ class Pastel
             }
             // And override that with values from config
             if (isset($metadataOverrides[$key])) {
-
                 $metadata[$key] = $metadataOverrides[$key];
             }
         }
+
         return $metadata;
     }
 
