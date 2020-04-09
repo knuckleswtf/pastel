@@ -35,7 +35,7 @@
     "shalvah/clara": "^1.1.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "^8.5",
+    "phpunit/phpunit": "^9.1",
     "ext-dom": "*",
     "ext-libxml": "*"
   },
