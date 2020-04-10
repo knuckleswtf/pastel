@@ -13,9 +13,13 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Removed
 
-## 1.1.1 - Friday, 10 April 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1..0...1.1.1))
+## 1.2.0 - Friday, 10 April 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.1.1...1.2.0))
 ### Added
 - CSS badge classes. Updated stub styling.
+
+## 1.1.1 - Friday, 10 April 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.1.0...1.1.1))
+### Modified
+- Tweaked dependencies
 
 ## 1.1.0 - Friday, 10 April 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.0.0...1.1.0))
 ### Modified
