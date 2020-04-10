@@ -40,12 +40,12 @@
     <ul id="toc">
     </ul>
 
-            <ul class="toc-footer">
+            <ul class="toc-footer" id="toc-footer">
                             <li><a href='#'>Sign up for a developer key</a></li>
                             <li><a href='https://github.com/knuckleswtf/pastel'>Documentation powered by Pastel</a></li>
                     </ul>
-            <ul class="toc-footer">
-            <li>Last updated: April 9 2020</li>
+            <ul class="toc-footer" id="last-updated">
+            <li>Last updated: April 10 2020</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -117,29 +117,18 @@ let kittens = api.kittens.get();</code></pre>
 ]</code></pre>
 <p>This endpoint retrieves all kittens.</p>
 <h3>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<p><small class="badge badge-green">GET</small> <strong><code>http://example.com/api/kittens</code></strong></p>
 <h3>Query Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody>
-</table>
+<p>
+    <code><b>include_cats</b></code>&nbsp; <i>Default: <code>false</code></i>    
+    <br>
+    If set to true, the result will also include cats.
+</p>
+<p>
+    <code><b>available</b></code>&nbsp; <i>Default: <code>true</code></i>  
+    <br>
+    If set to false, the result will include kittens that have already been adopted.
+</p>
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
@@ -171,22 +160,13 @@ let max = api.kittens.get(2);</code></pre>
 <p>This endpoint retrieves a specific kitten.</p>
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 <h3>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><small class="badge badge-green">GET</small> <strong><code>http://example.com/kittens/&lt;ID&gt;</code></strong></p>
 <h3>URL Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
-</tr>
-</tbody>
-</table>
+<p>
+    <code><b>ID</b></code>
+    <br>
+    The ID of the kitten to retrieve.
+</p>
 <h2>Delete a Specific Kitten</h2>
 <pre><code class="language-ruby">require 'kittn'
 
@@ -212,22 +192,13 @@ let max = api.kittens.delete(2);</code></pre>
 }</code></pre>
 <p>This endpoint deletes a specific kitten.</p>
 <h3>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><small class="badge badge-red">DELETE</small> <strong><code>http://example.com/kittens/&lt;ID&gt;</code></strong></p>
 <h3>URL Parameters</h3>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody>
-</table><h1>Errors</h1>
+<p>
+    <code><b>ID</b></code>
+    <br>
+    The ID of the kitten to delete.
+</p><h1>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/errors.md</code>. Pastel allows you to split your docs across multiple files...just add them to the top of your <code>index.md</code>'s front matter. Files are included in the order listed.
 </aside>

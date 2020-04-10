@@ -133,11 +133,16 @@ This endpoint retrieves all kittens.
 <small class="badge badge-green">GET</small> **`http://example.com/api/kittens`**
 
 ### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+<p>
+    <code><b>include_cats</b></code>&nbsp; <i>Default: <code>false</code></i>    
+    <br>
+    If set to true, the result will also include cats.
+</p>
+<p>
+    <code><b>available</b></code>&nbsp; <i>Default: <code>true</code></i>  
+    <br>
+    If set to false, the result will include kittens that have already been adopted.
+</p>
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
@@ -192,10 +197,11 @@ This endpoint retrieves a specific kitten.
 <small class="badge badge-green">GET</small> **`http://example.com/kittens/<ID>`**
 
 ### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+<p>
+    <code><b>ID</b></code>
+    <br>
+    The ID of the kitten to retrieve.
+</p>
 
 ## Delete a Specific Kitten
 
@@ -239,11 +245,12 @@ This endpoint deletes a specific kitten.
 
 ### HTTP Request
 
-<small class="badge badge-red>DELETE</small> **`http://example.com/kittens/<ID>`**
+<small class="badge badge-red">DELETE</small> **`http://example.com/kittens/<ID>`**
 
 ### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+<p>
+    <code><b>ID</b></code>
+    <br>
+    The ID of the kitten to delete.
+</p>
 
