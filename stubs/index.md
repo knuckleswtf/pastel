@@ -13,7 +13,7 @@ language_tabs:
 # HTMl to add in the footer of the sidebar (table of contents)
 toc_footers:
   - <a href='#'>Sign up for a developer key</a>
-  - <a href='https://github.com/knuckleswtf/pastel'>Documentation powered by Pastel</a>
+  - <a href='https://github.com/knuckleswtf/pastel'>Documentation powered by Pastel 🎨</a>
 
 # If you want a logo on the sidebar, set this to the path to the logo image file. Must be either a URL or a path relative to the docs destination from a browser.
 logo: false
@@ -29,9 +29,9 @@ includes:
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Welcome to the Kittn API! You can use our API to can get information on various cats, kittens, and breeds in our database.
 
-We have language bindings in Bash, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+As you scroll, you'll see code examples for working with the API in Bash, Ruby, Python, and JavaScript in the dark area to the right (or as part of the content on mobile), and you can switch the programming language of the examples with the tabs in the top right (or from the nav menu at the top left on mobile).
 
 This example API documentation page was borrowed from [Slate](https://github.com/slatedocs/slate) and generated with [Pastel](https://github.com/knuckleswtf/pastel). Feel free to edit it and use it as a base for your own API's documentation.
 
