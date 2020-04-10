@@ -2,6 +2,9 @@
 
 namespace Knuckles\Pastel\Tests;
 
+use DOMDocument;
+use DOMElement;
+use Illuminate\Support\Str;
 use Knuckles\Pastel\Pastel;
 use PHPUnit\Framework\TestCase;
 use Shalvah\Clara\Clara;
@@ -27,7 +30,7 @@ class PastelTest extends TestCase
         $this->outputDir = __DIR__ . '/output';
         $this->assertionDir = __DIR__ . '/assertions';
         $this->pastel = new Pastel();
-        Clara::mute();
+        clara::mute();
         // Silence unnecessary DomDocument errors
         libxml_use_internal_errors(true);
     }
@@ -170,14 +173,21 @@ class PastelTest extends TestCase
         $this->assertStringContainsString("Yay! I was included.", $source);
     }
 
-    /* Will implement when Clara supports capturing output
     public function test_logs_warning_for_missing_include_files()
     {
+
+        Clara::startCapturingOutput('shalvah/pastel');;
         $this->pastel->generate(
             __DIR__ . '/files/test-with-missing-includes.md',
             $this->outputDir . '/with-missing-includes'
         );
 
-        $output = [];
-    }*/
+        $output = Clara::getCapturedOutput('shalvah/pastel');
+
+        $filePath = __DIR__ . '/files/partials/nonexistent.md';
+        $warning = collect($output)->first(function ($line) use ($filePath) {
+           return Str::contains($line, "Include file $filePath not found");
+        });
+        $this->assertNotNull($warning);
+    }
 }

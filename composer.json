@@ -32,7 +32,7 @@
     "windwalker/renderer": "3.*",
     "league/flysystem": "^2.0",
     "ext-json": "*",
-    "shalvah/clara": "^1.1.0"
+    "shalvah/clara": "^2.0.0"
   },
   "require-dev": {
     "phpunit/phpunit": "^9.1",
@@ -41,6 +41,6 @@
   },
   "scripts": {
     "test": "phpunit --stop-on-failure",
-    "test-ci": "phpunit"
+    "test-ci": "vendor/bin/phpunit"
   }
 }

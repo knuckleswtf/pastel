@@ -21,6 +21,16 @@ class Pastel
     ];
 
     /**
+     * @var Clara
+     */
+    private $output;
+
+    public function __construct()
+    {
+        $this->output = Clara::app('shalvah/pastel');
+    }
+
+    /**
      * Generate the API documentation using the markdown and include files
      */
     public function generate(
@@ -68,7 +78,7 @@ class Pastel
                 if (file_exists(realpath($filePath))) {
                     $html .= $parser->parse(file_get_contents($filePath))->getContent();
                 } else {
-                    Clara::warn("Include file $filePath not found.");
+                    $this->output->warn("Include file $filePath not found.");
                 }
             });
         }
@@ -107,7 +117,7 @@ class Pastel
         rcopy($assetsFolder . '/js/', $destinationFolder . '/js');
         rcopy($assetsFolder . '/fonts/', $destinationFolder . '/fonts');
 
-        Clara::success("Generated documentation from $sourceMarkdownFilePath to $destinationFolder.");
+        $this->output->success("Generated documentation from $sourceMarkdownFilePath to $destinationFolder.");
     }
 
     protected function getPageMetadata($frontmatter, $metadataOverrides = []): array
