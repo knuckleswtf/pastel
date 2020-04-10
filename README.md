@@ -16,6 +16,7 @@ This project is a fork of [Documentarian](https://github.com/knuckleswtf/pastel)
 - [Usage](#usage)
   - [How do I write my docs in Markdown?](#how-do-i-write-my-docs-in-markdown)
   - [How do I convert my Markdown file to HTML docs?](#how-do-i-convert-my-markdown-file-to-html-docs)
+  - [Styling helpers](#styling-helpers)
 - [You might also like...](#you-might-also-like)
 
 ## Installation
@@ -101,6 +102,29 @@ You can also call Pastel from PHP. This is especially useful if you're building 
 $pastel = new Knuckles\Pastel\Pastel();
 $pastel->generate("docs_source/index.md", "docs", $metadataOverrides);
 ```
+### Styling helpers
+#### Badges
+![](./screenshots/badges-1.png) ![](./screenshots/badges-2.png)
+
+You can easily add badges by using the `badge` CSS class, along with one of the `badge-<colour>` classes.
+
+```html
+<small class="badge badge-darkred">REQUIRES AUTHENTICATION</small>
+
+<small class="badge badge-green">GET</small>
+```
+
+Available colours:
+- darkred
+- red
+- blue
+- darkblue
+- green
+- darkgreen
+- purple
+- black
+- grey
+
 
 ## You might also like...
 - [laravel-apidoc-generator](https://github.com/mpociot/laravel-apidoc-generator): Generate documentation for your Laravel APIs from your codebase. Built by the creator of Documentarian and maintained by the creator of Pastel. Powered by Pastel (soon).

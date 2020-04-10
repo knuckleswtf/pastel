@@ -920,3 +920,48 @@ html {
         width: auto
     }
 }
+
+.badge {
+    padding: 1px 9px 2px;
+    white-space: nowrap;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    border-radius: 9px;
+    color: #ffffff;
+}
+
+.badge.badge-darkred {
+    background-color: darkred;
+}
+
+.badge.badge-red {
+    background-color: red;
+}
+
+.badge.badge-blue {
+    background-color: blue;
+}
+
+.badge.badge-darkblue {
+    background-color: darkblue;
+}
+
+.badge.badge-green {
+    background-color: green;
+}
+
+.badge.badge-darkgreen {
+    background-color: darkgreen;
+}
+
+.badge.badge-purple {
+    background-color: purple;
+}
+
+.badge.badge-black {
+    background-color: black;
+}
+
+.badge.badge-grey {
+    background-color: grey;
+}
