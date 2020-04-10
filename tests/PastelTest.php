@@ -101,8 +101,15 @@ class PastelTest extends TestCase
             return $ul->getAttribute('id') === "toc-footer";
         });
         $this->assertNotNull($tocFooter);
-        $this->assertCount(3, $tocFooter->childNodes); // One text node on either side
-        $link = $tocFooter->childNodes[1]->childNodes[0];
+
+        $li = null;
+        /** @var \DOMNode $node */
+        foreach ($tocFooter->childNodes as $node) {
+            if ($node instanceof DOMElement) {
+                $li = $node;
+            }
+        }
+        $link = $li->childNodes[0];
         $this->assertNotNull($link);
         $this->assertEquals("Hey", $link->textContent);
 
