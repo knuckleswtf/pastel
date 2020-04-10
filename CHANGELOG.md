@@ -13,6 +13,10 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Removed
 
+## 1.1.0 - Friday, 10 April 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.00...1.1.0))
+### Modified
+- Tweak dependencies temporarily to allow for installation in most projects
+
 ## 1.0.0 - Thursday, 9 April 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/0.2.0...1.0.0))
 ### Modified
 - Switch to Clara for console output (https://github.com/knuckleswtf/pastel/commit/6a011391262a726e147ceb99ee3e6784aaf00e01)

@@ -36,6 +36,7 @@ if (!function_exists('rcopy')) {
     }
 }
 
+// Note that league/flysystem is in require-dev, so this function wont work outside tests
 function deleteDirectoryAndContents($dir)
 {
     $dir = ltrim($dir, '/');
