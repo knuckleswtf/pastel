@@ -130,7 +130,7 @@ This endpoint retrieves all kittens.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+<small class="badge badge-green">GET</small> **`http://example.com/api/kittens`**
 
 ### Query Parameters
 
@@ -189,7 +189,7 @@ This endpoint retrieves a specific kitten.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+<small class="badge badge-green">GET</small> **`http://example.com/kittens/<ID>`**
 
 ### URL Parameters
 
@@ -239,7 +239,7 @@ This endpoint deletes a specific kitten.
 
 ### HTTP Request
 
-`DELETE http://example.com/kittens/<ID>`
+<small class="badge badge-red>DELETE</small> **`http://example.com/kittens/<ID>`**
 
 ### URL Parameters
 
