@@ -267,15 +267,15 @@ html {
 }
 
 .content aside.warning:before {
-    content: "\f06a"
+    content: "✋"
 }
 
 .content aside.notice:before {
-    content: "\f05a"
+    content: "ℹ"
 }
 
 .content aside.success:before {
-    content: "\f058"
+    content: "✅"
 }
 
 .tocify-wrapper>.search:before {

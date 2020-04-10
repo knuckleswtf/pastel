@@ -13,6 +13,10 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Removed
 
+## 1.2.1 - Saturday, 11 April 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.2.0...1.2.1))
+### Modified
+- Switch to emojis to replace missing icons
+
 ## 1.2.0 - Friday, 10 April 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.1.1...1.2.0))
 ### Added
 - CSS badge classes. Updated stub styling.
