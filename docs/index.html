@@ -18,7 +18,7 @@
 
 </head>
 
-<body class="" data-languages="[&quot;ruby&quot;,&quot;python&quot;,&quot;bash&quot;,&quot;javascript&quot;]">
+<body class="" data-languages="[&quot;php&quot;,&quot;python&quot;,&quot;bash&quot;,&quot;javascript&quot;]">
 <a href="#" id="nav-button">
       <span>
         NAV
@@ -27,7 +27,7 @@
 </a>
 <div class="tocify-wrapper">
                 <div class="lang-selector">
-                            <a href="#" data-language-name="ruby">ruby</a>
+                            <a href="#" data-language-name="php">php</a>
                             <a href="#" data-language-name="python">python</a>
                             <a href="#" data-language-name="bash">bash</a>
                             <a href="#" data-language-name="javascript">javascript</a>
@@ -59,13 +59,22 @@
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre><code class="language-ruby">require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')</code></pre>
+<pre><code class="language-php"># With PHP, you can pass in the correct header with each request
+$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get(
+    "api_endpoint_here",
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'meowmeowmeow',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import kittn
 
 api = kittn.authorize('meowmeowmeow')</code></pre>
-<pre><code class="language-bash"># With bash, you can just pass the correct header with each request
+<pre><code class="language-bash"># With Bash, you pass in the correct header with each request
 curl "api_endpoint_here"
   -H "Authorization: meowmeowmeow"</code></pre>
 <pre><code class="language-javascript">const kittn = require('kittn');
@@ -82,10 +91,10 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 <h1>Kittens</h1>
 <h2>Get All Kittens</h2>
-<pre><code class="language-ruby">require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get</code></pre>
+<pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get("http://example.com/kittens/");
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import kittn
 
 api = kittn.authorize('meowmeowmeow')
@@ -133,10 +142,10 @@ let kittens = api.kittens.get();</code></pre>
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 <h2>Get a Specific Kitten</h2>
-<pre><code class="language-ruby">require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)</code></pre>
+<pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;get('http://example.com/kittens/2');
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import kittn
 
 api = kittn.authorize('meowmeowmeow')
@@ -168,10 +177,10 @@ let max = api.kittens.get(2);</code></pre>
     The ID of the kitten to retrieve.
 </p>
 <h2>Delete a Specific Kitten</h2>
-<pre><code class="language-ruby">require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)</code></pre>
+<pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$response = $client-&gt;delete('http://example.com/kittens/2');
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
 <pre><code class="language-python">import kittn
 
 api = kittn.authorize('meowmeowmeow')
@@ -260,7 +269,7 @@ This error section is stored in a separate file in <code>includes/errors.md</cod
     </div>
     <div class="dark-box">
                     <div class="lang-selector">
-                                    <a href="#" data-language-name="ruby">ruby</a>
+                                    <a href="#" data-language-name="php">php</a>
                                     <a href="#" data-language-name="python">python</a>
                                     <a href="#" data-language-name="bash">bash</a>
                                     <a href="#" data-language-name="javascript">javascript</a>
@@ -269,7 +278,7 @@ This error section is stored in a separate file in <code>includes/errors.md</cod
 </div>
 <script>
     $(function () {
-        var languages = ["ruby","python","bash","javascript"];
+        var languages = ["php","python","bash","javascript"];
         setupLanguages(languages);
     });
 </script>

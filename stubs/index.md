@@ -5,7 +5,7 @@ title: API Reference
 # Languages to switch between in the code samples. Please list them in the same order your code blocks are.
 # Supported languages for highlighting: `bash`, `csharp`, `go`, `java`, `javascript`, `php`, `python`, `ruby`
 language_tabs: 
-  - ruby
+  - php
   - python
   - bash
   - javascript
@@ -39,10 +39,19 @@ This example API documentation page was borrowed from [Slate](https://github.com
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+```php
+# With PHP, you can pass in the correct header with each request
+$client = new \GuzzleHttp\Client();
+$response = $client->get(
+    "api_endpoint_here",
+    [
+        'headers' => [
+            'Authorization' => 'meowmeowmeow',
+        ],
+    ]
+);
+$body = $response->getBody();
+print_r(json_decode((string) $body));
 ```
 
 ```python
@@ -52,7 +61,7 @@ api = kittn.authorize('meowmeowmeow')
 ```
 
 ```bash
-# With bash, you can just pass the correct header with each request
+# With Bash, you pass in the correct header with each request
 curl "api_endpoint_here"
   -H "Authorization: meowmeowmeow"
 ```
@@ -79,11 +88,11 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 ## Get All Kittens
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+```php
+$client = new \GuzzleHttp\Client();
+$response = $client->get("http://example.com/kittens/");
+$body = $response->getBody();
+print_r(json_decode((string) $body));
 ```
 
 ```python
@@ -150,11 +159,11 @@ Remember — a happy kitten is an authenticated kitten!
 
 ## Get a Specific Kitten
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
+```php
+$client = new \GuzzleHttp\Client();
+$response = $client->get('http://example.com/kittens/2');
+$body = $response->getBody();
+print_r(json_decode((string) $body));
 ```
 
 ```python
@@ -205,11 +214,11 @@ This endpoint retrieves a specific kitten.
 
 ## Delete a Specific Kitten
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
+```php
+$client = new \GuzzleHttp\Client();
+$response = $client->delete('http://example.com/kittens/2');
+$body = $response->getBody();
+print_r(json_decode((string) $body));
 ```
 
 ```python
