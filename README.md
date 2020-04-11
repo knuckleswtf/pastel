@@ -132,6 +132,15 @@ Available colours:
 - black
 - grey
 
+#### Fancy headings
+You can help your lower-level headings stand out by using the `fancy-heading-panel` class:
+
+```html
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+```
+
+![](./screenshots/fancy-headings.png)
+
 
 ## You might also like...
 - [laravel-apidoc-generator](https://github.com/mpociot/laravel-apidoc-generator): Generate documentation for your Laravel APIs from your codebase. Built by the creator of Documentarian and maintained by the creator of Pastel. Powered by Pastel (soon).
