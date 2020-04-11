@@ -77,6 +77,13 @@ includes:
 - ./includes/errors.md
 ```
 
+Alternatively, you can use `*` as a wildcard. Note that, in this case, files will be included in alphabetical order.
+
+```
+includes:
+- ./includes/*
+```
+
 - `last_updated`: The date on which the docs were last updated. Helpful so your users know if they're looking at something stale. Leave this empty and it will automatically be set to the most recent time you edited your Markdown files (main or includes). If you want to set this manually, you can write whatever you want here. Pastel will render it as is.
 
 Most of these sections can be disabled in the generated documentation by omitting them from the front matter.

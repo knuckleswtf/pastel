@@ -180,6 +180,30 @@ class PastelTest extends TestCase
         $this->assertStringContainsString("Yay! I was included.", $source);
     }
 
+    public function test_can_include_entire_directory_in_alphabetical_order()
+    {
+        $this->pastel->generate(
+            __DIR__ . '/files/test-with-directory-include.md',
+            $this->outputDir . '/with-directory-include'
+        );
+
+        $source = file_get_contents(__DIR__ . '/output/with-directory-include/index.html');
+        $dom = new DOMDocument;
+        $dom->loadHTML($source);
+
+        $h1s = collect($dom->getElementsByTagName('h1'));
+        $indexOfFirstOne = $h1s->search(function (DOMElement $h1) {
+            return $h1->nodeValue === "Also Include Me";
+        });
+        $indexOfSecondOne = $h1s->search(function (DOMElement $h1) {
+            return $h1->nodeValue === "Include Me";
+        });
+
+        $this->assertNotFalse($indexOfFirstOne);
+        $this->assertNotFalse($indexOfSecondOne);
+        $this->assertGreaterThan($indexOfFirstOne, $indexOfSecondOne);
+    }
+
     public function test_logs_warning_for_missing_include_files()
     {
 

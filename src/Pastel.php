@@ -75,10 +75,19 @@ class Pastel
                     return rtrim($sourceFolder, '/') . '/'. ltrim($include, '/');
             });
             $filePathsToInclude->each(function ($filePath) use ($parser, &$html) {
-                if (file_exists(realpath($filePath))) {
-                    $html .= $parser->parse(file_get_contents($filePath))->getContent();
+                if (Str::contains($filePath, '*')) {
+                    foreach (glob($filePath) as $file) {
+                        if (!in_array($file, ['.', '..'])) {
+                            $html .= $parser->parse(file_get_contents($file))->getContent();
+                        }
+                    }
                 } else {
-                    $this->output->warn("Include file $filePath not found.");
+                    $path = realpath($filePath);
+                    if ($path === false) {
+                        $this->output->warn("Include file $filePath not found.");
+                        return;
+                    }
+                    $html .= $parser->parse(file_get_contents($path))->getContent();
                 }
             });
         }
