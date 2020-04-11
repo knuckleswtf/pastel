@@ -45,7 +45,7 @@
                             <li><a href='https://github.com/knuckleswtf/pastel'>Documentation powered by Pastel 🎨</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: April 10 2020</li>
+            <li>Last updated: April 11 2020</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -53,7 +53,7 @@
     <div class="content">
         <h1>Introduction</h1>
 <p>Welcome to the Kittn API! You can use our API to can get information on various cats, kittens, and breeds in our database.</p>
-<p>As you scroll, you'll see code examples for working with the API in Bash, Ruby, Python, and JavaScript in the dark area to the right (or as part of the content on mobile), and you can switch the programming language of the examples with the tabs in the top right (or from the nav menu at the top left on mobile).</p>
+<p>As you scroll, you'll see code examples for working with the API in Bash, PHP, Python, and JavaScript in the dark area to the right (or as part of the content on mobile), and you can switch the programming language of the examples with the tabs in the top right (or from the nav menu at the top left on mobile).</p>
 <p>This example API documentation page was borrowed from <a href="https://github.com/slatedocs/slate">Slate</a> and generated with <a href="https://github.com/knuckleswtf/pastel">Pastel</a>. Feel free to edit it and use it as a base for your own API's documentation.</p>
 <h1>Authentication</h1>
 <blockquote>
@@ -127,7 +127,7 @@ let kittens = api.kittens.get();</code></pre>
 <p>This endpoint retrieves all kittens.</p>
 <h3>HTTP Request</h3>
 <p><small class="badge badge-green">GET</small> <strong><code>http://example.com/api/kittens</code></strong></p>
-<h3>Query Parameters</h3>
+<h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
 <p>
     <code><b>include_cats</b></code>&nbsp; <i>Default: <code>false</code></i>    
     <br>
@@ -170,7 +170,7 @@ let max = api.kittens.get(2);</code></pre>
 <aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 <h3>HTTP Request</h3>
 <p><small class="badge badge-green">GET</small> <strong><code>http://example.com/kittens/&lt;ID&gt;</code></strong></p>
-<h3>URL Parameters</h3>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
     <code><b>ID</b></code>
     <br>
@@ -202,7 +202,7 @@ let max = api.kittens.delete(2);</code></pre>
 <p>This endpoint deletes a specific kitten.</p>
 <h3>HTTP Request</h3>
 <p><small class="badge badge-red">DELETE</small> <strong><code>http://example.com/kittens/&lt;ID&gt;</code></strong></p>
-<h3>URL Parameters</h3>
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
     <code><b>ID</b></code>
     <br>

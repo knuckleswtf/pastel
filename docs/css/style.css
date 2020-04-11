@@ -965,3 +965,21 @@ html {
 .badge.badge-grey {
     background-color: grey;
 }
+
+.fancy-heading-panel {
+    background-color: lightgrey;
+    border-radius: 5px;
+    padding-left: 5px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    margin-left: 25px;
+    margin-right: 10px;
+    width: 47%;
+}
+
+@media screen and (max-width: 700px) {
+    .fancy-heading-panel {
+        width: 95%;
+    }
+
+}

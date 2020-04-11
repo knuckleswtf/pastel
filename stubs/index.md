@@ -141,7 +141,7 @@ This endpoint retrieves all kittens.
 
 <small class="badge badge-green">GET</small> **`http://example.com/api/kittens`**
 
-### Query Parameters
+<h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
 <p>
     <code><b>include_cats</b></code>&nbsp; <i>Default: <code>false</code></i>    
     <br>
@@ -205,7 +205,7 @@ This endpoint retrieves a specific kitten.
 
 <small class="badge badge-green">GET</small> **`http://example.com/kittens/<ID>`**
 
-### URL Parameters
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
     <code><b>ID</b></code>
     <br>
@@ -256,7 +256,7 @@ This endpoint deletes a specific kitten.
 
 <small class="badge badge-red">DELETE</small> **`http://example.com/kittens/<ID>`**
 
-### URL Parameters
+<h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
     <code><b>ID</b></code>
     <br>

@@ -6,7 +6,7 @@
 Pastel is a PHP tool to generate beautiful documentation from Markdown. [Here's what the output looks like.](https://knuckleswtf.github.io/pastel)
 
 <p align="center">
-  <img src="./screenshots/pastel-screenshot-2.png">
+  <img src="./screenshots/pastel-screenshot-1.png">
 </p>
 
 This project is a fork of [Documentarian](https://github.com/knuckleswtf/pastel), which is itself a PHP port of [Slate](https://github.com/slatedocs/slate), the API documentation tool.
