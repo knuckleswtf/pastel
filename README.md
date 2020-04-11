@@ -1,7 +1,6 @@
 # Pastel 🎨
 
-[![Latest release](http://img.shields.io/packagist/v/knuckleswtf/pastel.svg?style=flat)](https://packagist.org/packages/knuckleswtf/pastel)
-[![Build Status](https://travis-ci.org/knuckleswtf/pastel.svg?branch=master)](https://travis-ci.org/knuckleswtf/pastel)
+[![Latest release](http://img.shields.io/packagist/v/knuckleswtf/pastel.svg?style=flat)](https://packagist.org/packages/knuckleswtf/pastel) [![Build Status](https://travis-ci.org/knuckleswtf/pastel.svg?branch=master)](https://travis-ci.org/knuckleswtf/pastel)[![Total Downloads](https://poser.pugx.org/knuckleswtf/pastel/downloads)](https://packagist.org/packages/knuckleswtf/pastel)
 
 Pastel is a PHP tool to generate beautiful documentation from Markdown. [Here's what the output looks like.](https://knuckleswtf.github.io/pastel)
 
