@@ -16,6 +16,7 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 ## 1.3.0 - Saturday, 11 April 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.2.1...1.3.0))
 ### Added
 - Wildcard support for include files (https://github.com/knuckleswtf/pastel/commit/39a6cf98c51aa392defd6c6517ae0ff72e47b9fb)
+- Fancy heading helper class (https://github.com/knuckleswtf/pastel/commit/24d22bf4a922d69b8ad82cd98e30aecb96df3bcb)
 
 ## 1.2.1 - Saturday, 11 April 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.2.0...1.2.1))
 ### Modified
