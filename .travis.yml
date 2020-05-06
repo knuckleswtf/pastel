@@ -9,4 +9,5 @@ before_script:
   - travis_retry composer install --prefer-source --no-interaction
 
 script:
+  - composer lint
   - composer test-ci
