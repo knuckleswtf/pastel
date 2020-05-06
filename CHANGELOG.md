@@ -13,6 +13,10 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Removed
 
+## 1.3.1 - Wednesday, 6 May 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.0...1.3.1))
+### Modified
+- Lowered minimum PHP level to 7.2.5
+
 ## 1.3.0 - Saturday, 11 April 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.2.1...1.3.0))
 ### Added
 - Wildcard support for include files (https://github.com/knuckleswtf/pastel/commit/39a6cf98c51aa392defd6c6517ae0ff72e47b9fb)
