@@ -24,7 +24,7 @@
     "pastel"
   ],
   "require": {
-    "php": ">=7.3",
+    "php": ">=7.2.5",
     "mnapoli/silly": "~1.0",
     "illuminate/view": "^6.0|^7.0",
     "mnapoli/front-yaml": "^1.6 ",
@@ -36,13 +36,15 @@
     "phpunit/phpunit": "^9.1",
     "league/flysystem": "^2.0@dev",
     "ext-dom": "*",
-    "ext-libxml": "*"
+    "ext-libxml": "*",
+    "phpstan/phpstan": "^0.12.23"
   },
   "replace": {
     "mpociot/documentarian": "*"
   },
   "scripts": {
     "test": "phpunit --stop-on-failure",
-    "test-ci": "vendor/bin/phpunit"
+    "test-ci": "vendor/bin/phpunit",
+    "lint": "phpstan analyse -c ./phpstan.neon src"
   }
 }
