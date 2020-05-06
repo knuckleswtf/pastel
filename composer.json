@@ -45,6 +45,6 @@
   "scripts": {
     "test": "phpunit --stop-on-failure",
     "test-ci": "vendor/bin/phpunit",
-    "lint": "phpstan analyse -c ./phpstan.neon src"
+    "lint": "phpstan analyse -c ./phpstan.neon src/Pastel.php"
   }
 }
