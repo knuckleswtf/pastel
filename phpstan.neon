@@ -1,0 +1,6 @@
+parameters:
+    level: 5
+    reportUnmatchedIgnoredErrors: false
+    inferPrivatePropertyTypeFromConstructor: true
+    ignoreErrors:
+        - '#Parameter \#1 \$paths of class Windwalker\\Renderer\\BladeRenderer constructor expects SplPriorityQueue\|null,#'
