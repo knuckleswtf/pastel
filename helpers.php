@@ -14,7 +14,7 @@ if (!function_exists('rcopy')) {
     function rcopy($src, $dest)
     {
         // If source is not a directory stop processing
-        if (!is_dir($src)) return false;
+        if (!is_dir($src)) return;
 
         // If the destination directory does not exist create it
         if (!is_dir($dest)) {
@@ -61,19 +61,19 @@ function get_css_link_tag($name, $media = '')
 {
     return <<<HTML
     <link rel="stylesheet" href="css/$name.css" media="$media" />
-    HTML;
+HTML;
 }
 
 function get_js_script_tag($name)
 {
     return <<<HTML
     <script src="js/$name.js"></script>
-    HTML;
+HTML;
 }
 
 function get_image_tag($path, $class = '')
 {
     return <<<HTML
     <img src="$path" alt="$class-image" class="$class"/>
-    HTML;
+HTML;
 }
