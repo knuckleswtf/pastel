@@ -142,7 +142,7 @@ You can help your lower-level headings stand out by using the `fancy-heading-pan
 
 
 ## You might also like...
-- [laravel-apidoc-generator](https://github.com/mpociot/laravel-apidoc-generator): Generate documentation for your Laravel APIs from your codebase. Built by the creator of Documentarian and maintained by the creator of Pastel. Powered by Pastel (soon).
+- [Scribe](https://github.com/knuckleswtf/scribe): Generate documentation for your Laravel APIs from your codebase. Powered by Pastel.
 
 ## Todo
 - Custom favicon support
