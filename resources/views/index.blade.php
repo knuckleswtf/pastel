@@ -27,7 +27,7 @@
 </a>
 <div class="tocify-wrapper">
     @if($page['logo'] != false)
-    <img src="{{ $page['logo'] }}" alt="logo" class="logo" width="230px"/>
+    <img src="{{ $page['logo'] }}" alt="logo" class="logo" style="padding-top: 10px;" width="230px"/>
     @endif
     @isset($page['language_tabs'])
         <div class="lang-selector">

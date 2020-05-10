@@ -13,6 +13,10 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Removed
 
+## 1.3.2 - Sunday, 10 May 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.1...1.3.2))
+### Modified
+- Added some padding above the logo image
+
 ## 1.3.1 - Wednesday, 6 May 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.0...1.3.1))
 ### Modified
 - Lowered minimum PHP level to 7.2.5
