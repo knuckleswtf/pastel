@@ -140,6 +140,8 @@ You can help your lower-level headings stand out by using the `fancy-heading-pan
 
 ![](./screenshots/fancy-headings.png)
 
+#### Notes and Warnings
+You can add little highlighted warnings and notes using the `<aside>` tag and either of the classes "notice", "warning", or "success".
 
 ## You might also like...
 - [Scribe](https://github.com/knuckleswtf/scribe): Generate documentation for your Laravel APIs from your codebase. Powered by Pastel.
