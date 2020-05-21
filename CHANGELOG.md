@@ -13,7 +13,7 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Removed
 
-## 1.3.3 - Sunday, 10 May 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.2...1.3.3))
+## 1.3.3 - Thursday, 21 May 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.2...1.3.3))
 ### Modified
 - Updated dependencies to support Symfony 5.
 
