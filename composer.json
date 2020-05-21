@@ -26,8 +26,8 @@
   "require": {
     "php": ">=7.2.5",
     "mnapoli/silly": "~1.0",
-    "illuminate/view": "^6.0|^7.0",
-    "mnapoli/front-yaml": "^1.6 ",
+    "illuminate/view": "^6.0|^7.0|^8.0",
+    "mnapoli/front-yaml": "^1.7.0",
     "windwalker/renderer": "3.*",
     "ext-json": "*",
     "shalvah/clara": "^2.0.0"
