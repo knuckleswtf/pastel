@@ -1,6 +1,6 @@
 {
   "name": "knuckleswtf/pastel",
-  "description": "Generate pretty API documentation from Markdown.",
+  "description": "Write your API docs in Markdown and get them converted into pretty HTML🎨",
   "keywords": [
     "documentation",
     "generation",
