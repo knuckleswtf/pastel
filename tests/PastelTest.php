@@ -16,10 +16,7 @@ class PastelTest extends TestCase
      * @var string
      */
     private $outputDir;
-    /**
-     * @var string
-     */
-    private $assertionDir;
+
     /**
      * @var Pastel
      */
@@ -28,7 +25,6 @@ class PastelTest extends TestCase
     protected function setUp(): void
     {
         $this->outputDir = __DIR__ . '/output';
-        $this->assertionDir = __DIR__ . '/assertions';
         $this->pastel = new Pastel();
         clara::mute();
         // Silence unnecessary DomDocument errors
