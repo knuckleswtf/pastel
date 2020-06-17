@@ -103,17 +103,11 @@ vendor/bin/pastel generate docs_source/index.md docs
 
 This will generate a new API documentation from the file docs_source/index.md and place the output in your docs/ directory. You can replace docs_source/index.md with vendor/knuckleswtf/pastel/stubs/index.md to use the sample API included with this package.
 
-You can also pass in metadata values to override the ones set in the front matter:
-
-```bash
-vendor/bin/pastel generate docs_source/index.md docs --metadata logo=https://slatedocs.github.io/slate/images/logo.png --metadata toc_footers="<a>First</a>,<a>Second</a>"
-```
-
 You can also call Pastel from PHP. This is especially useful if you're building a tool on top of this. Here's how you'd use it:
 
 ```php
 $pastel = new Knuckles\Pastel\Pastel();
-$pastel->generate("docs_source/index.md", "docs", $metadataOverrides);
+$pastel->generate("docs_source/index.md", "docs");
 ```
 ### Styling helpers
 #### Badges
