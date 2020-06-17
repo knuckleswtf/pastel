@@ -7,7 +7,7 @@ Pastel is a tool for generating pretty API documentation from Markdown. Write yo
 - a table of contents for easy navigation
 - search functionality
 - automatic "Last updated" tag, so your users know how fresh the docs are
-- a logo, if youd like
+- a logo, if you like
 - custom HTML and CSS helpers for when you want to apply special styles
  
 Want to see it in action? [Here's what the output looks like.](https://knuckleswtf.github.io/pastel)
