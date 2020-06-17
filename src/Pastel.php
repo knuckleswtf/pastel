@@ -93,7 +93,7 @@ class Pastel
         }
 
         if (empty($frontmatter['last_updated'])) {
-            # Set last_updated to most recent time main or include files was modified
+            // Set last_updated to most recent time main or include files was modified
             $timesLastUpdatedFiles = $filePathsToInclude->map(function ($filePath) {
                 $realPath = realpath($filePath);
                 return $realPath ? filemtime($realPath) : 0;

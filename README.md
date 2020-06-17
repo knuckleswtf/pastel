@@ -2,13 +2,20 @@
 
 [![Latest release](http://img.shields.io/packagist/v/knuckleswtf/pastel.svg?style=flat)](https://packagist.org/packages/knuckleswtf/pastel) [![Build Status](https://travis-ci.org/knuckleswtf/pastel.svg?branch=master)](https://travis-ci.org/knuckleswtf/pastel)[![Total Downloads](https://poser.pugx.org/knuckleswtf/pastel/downloads)](https://packagist.org/packages/knuckleswtf/pastel)
 
-Pastel is a PHP tool to generate beautiful documentation from Markdown. [Here's what the output looks like.](https://knuckleswtf.github.io/pastel)
+Pastel is a tool for generating pretty API documentation from Markdown. Write your docs in Markdown and let Pastel convert it to a HTML page, complete with:
+- syntax highlighting for code examples
+- a table of contents for easy navigation
+- search functionality
+- automatic "Last updated" tag, so your users know how fresh the docs are 
+- custom HTML and CSS helpers for when you want to apply special styles
+ 
+Want to see it in action? [Here's what the output looks like.](https://knuckleswtf.github.io/pastel)
 
 <p align="center">
   <img src="./screenshots/pastel-screenshot-1.png">
 </p>
 
-This project was forked from [Documentarian](https://github.com/knuckleswtf/pastel), which is itself a PHP port of [Slate](https://github.com/slatedocs/slate), the API documentation tool.
+Pastel was forked from [Documentarian](https://github.com/mpociot/documentarian), which is itself a PHP port of [Slate](https://github.com/slatedocs/slate), the API documentation tool. Here's a [Node.js version](https://github.com/knuckleswtf/pastel).
 
 ## Table of contents
 - [Installation](#installation)
@@ -16,7 +23,7 @@ This project was forked from [Documentarian](https://github.com/knuckleswtf/past
   - [How do I write my docs in Markdown?](#how-do-i-write-my-docs-in-markdown)
   - [How do I convert my Markdown file to HTML docs?](#how-do-i-convert-my-markdown-file-to-html-docs)
   - [Styling helpers](#styling-helpers)
-- [You might also like...](#you-might-also-like)
+- [Integrations](#integrations)
 
 ## Installation
 ```bash
