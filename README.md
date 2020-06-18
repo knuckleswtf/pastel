@@ -3,14 +3,15 @@
 [![Latest release](http://img.shields.io/packagist/v/knuckleswtf/pastel.svg?style=flat)](https://packagist.org/packages/knuckleswtf/pastel) [![Build Status](https://travis-ci.org/knuckleswtf/pastel.svg?branch=master)](https://travis-ci.org/knuckleswtf/pastel)[![Total Downloads](https://poser.pugx.org/knuckleswtf/pastel/downloads)](https://packagist.org/packages/knuckleswtf/pastel)
 
 Pastel is a tool for generating pretty API documentation from Markdown. Write your docs in Markdown and let Pastel convert it to a HTML page, complete with:
-- syntax highlighting for code examples
+- mobile responsiveness
+- syntax highlighting for code examples in multiple languages
 - a table of contents for easy navigation
 - search functionality
 - automatic "Last updated" tag, so your users know how fresh the docs are
 - a logo, if you like
 - custom HTML and CSS helpers for when you want to apply special styles
  
-Want to see it in action? [Here's what the output looks like.](https://knuckleswtf.github.io/pastel)
+Want to see it in action? [Here's what the output looks like](https://knuckleswtf.github.io/pastel).
 
 <p align="center">
   <img src="./screenshots/pastel-screenshot-1.png">
@@ -32,17 +33,17 @@ composer require --dev knuckleswtf/pastel
 ```
  
 ## Usage
-Pastel is like Documentarian and Slate, but simpler and with a somewhat different paradigm. You shouldn't need to write any PHP, just Markdown and maybe HTML. Here's what you need to know:
-
+With Pastel, you write your docs in Markdown, and you get complete HTML/CSS?JS output. Here's what you need to know:
+ 
 ### How do I write my docs in Markdown?
 Start off with a single Markdown file. There are two parts:
-
+ 
 #### The content
 Your Markdown file should contain your docs, written as you like. There's no set format, but you can start with an introduction, talk about authentication and any general details, then describe each endpoint in its own section. Write example requests and responses using code blocks, use tables or paragraphs to describe request and response parameters.
- 
+  
 There's a good example in the included example Markdown ([stubs/index.md](./stubs/index.md)) and the resulting HTML output ([docs/index.html](./docs/index.html)).
-
-For a full explanation of the supported Markdown syntax, see [How to Edit Slate Markdown files](https://github.com/slatedocs/slate/wiki/Markdown-Syntax)
+ 
+Pastel uses the same Markdown syntax as Slate. See [How to Edit Slate Markdown files](https://github.com/slatedocs/slate/wiki/Markdown-Syntax)
 
 #### The front matter
 The front matter is a YAML section in your Markdown file that comes before the actual content. It's separated from the main content by a line before and after it containing only "---" (see [stubs/index.md](./stubs/index.md)).
@@ -84,11 +85,11 @@ includes:
 - ./includes/errors.md
 ```
 
-Alternatively, you can use `*` as a wildcard. Note that, in this case, files will be included in alphabetical order.
-
+You can also use `*` as a wildcard. In this case, files matching the pattern will be included in alphabetical order.
+ 
 ```
 includes:
-- ./includes/*
+- ./includes/*.md
 ```
 
 - `last_updated`: The date on which the docs were last updated. Helpful so your users know if they're looking at something stale. Leave this empty and it will automatically be set to the most recent time you edited your Markdown files (main or includes). If you want to set this manually, you can write whatever you want here. Pastel will render it as is.
@@ -96,19 +97,19 @@ includes:
 Most of these sections can be disabled in the generated documentation by omitting them from the front matter.
 
 ### How do I convert my Markdown file to HTML docs?
-If you've installed this using Composer, you can just run the CLI script (`vendor/bin/pastel`). Here's how you'd use it:
 
 ```bash
 vendor/bin/pastel generate docs_source/index.md docs
 ```
 
-This will generate a new API documentation from the file docs_source/index.md and place the output in your docs/ directory. You can replace docs_source/index.md with vendor/knuckleswtf/pastel/stubs/index.md to use the sample API included with this package.
+This will generate a new API documentation from the file `docs_source/index.md` and place the output in your docs/ directory. You can replace `docs_source/index.md` with vendor/knuckleswtf/pastel/stubs/index.md to use the sample Markdown docs included with this package.
 
+ 
 You can also call Pastel from PHP. This is especially useful if you're building a tool on top of this. Here's how you'd use it:
-
+ 
 ```php
-$pastel = new Knuckles\Pastel\Pastel();
-$pastel->generate("docs_source/index.md", "docs");
+ $pastel = new Knuckles\Pastel\Pastel();
+ $pastel->generate("docs_source/index.md", "docs");
 ```
 ### Styling helpers
 #### Badges
@@ -150,4 +151,4 @@ You can add little highlighted warnings and notes using the `<aside>` tag and ei
 
 ## Todo
 - Custom favicon support
-- Custom templates
+- Customizable output templates

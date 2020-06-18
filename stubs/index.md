@@ -1,6 +1,6 @@
 ---
 # Page title. Only shown on the browser tab, not actual page content 
-title: API Reference
+title: Kittn API docs
 
 # Languages to switch between in the code samples. Please list them in the same order your code blocks are.
 # Supported languages for highlighting: `bash`, `csharp`, `go`, `java`, `javascript`, `php`, `python`, `ruby`
