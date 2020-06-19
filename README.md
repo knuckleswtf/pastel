@@ -1,6 +1,8 @@
 # Pastel 🎨
 
-[![Latest release](http://img.shields.io/packagist/v/knuckleswtf/pastel.svg?style=flat)](https://packagist.org/packages/knuckleswtf/pastel) [![Build Status](https://travis-ci.org/knuckleswtf/pastel.svg?branch=master)](https://travis-ci.org/knuckleswtf/pastel)[![Total Downloads](https://poser.pugx.org/knuckleswtf/pastel/downloads)](https://packagist.org/packages/knuckleswtf/pastel)
+[![Latest release](http://img.shields.io/packagist/v/knuckleswtf/pastel.svg?style=flat)](https://packagist.org/packages/knuckleswtf/pastel) 
+[![Build Status](https://travis-ci.com/knuckleswtf/pastel.svg?branch=master)](https://travis-ci.com/knuckleswtf/pastel)
+[![Total Downloads](https://poser.pugx.org/knuckleswtf/pastel/downloads)](https://packagist.org/packages/knuckleswtf/pastel)
 
 Pastel is a tool for generating pretty API documentation from Markdown. Write your docs in Markdown and let Pastel convert it to a HTML page, complete with:
 - mobile responsiveness
