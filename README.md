@@ -24,8 +24,8 @@ Pastel was forked from [Documentarian](https://github.com/mpociot/documentarian)
 ## Table of contents
 - [Installation](#installation)
 - [Usage](#usage)
-  - [How do I write my docs in Markdown?](#how-do-i-write-my-docs-in-markdown)
-  - [How do I convert my Markdown file to HTML docs?](#how-do-i-convert-my-markdown-file-to-html-docs)
+  - [Writing your docs in Markdown](#writing-your-docs-in-markdown)
+  - [Converting your Markdown file to HTML docs](#converting-your-markdown-file-to-html-docs)
   - [Styling helpers](#styling-helpers)
 - [Integrations](#integrations)
 
@@ -37,7 +37,7 @@ composer require --dev knuckleswtf/pastel
 ## Usage
 With Pastel, you write your docs in Markdown, and you get complete HTML/CSS?JS output. Here's what you need to know:
  
-### How do I write my docs in Markdown?
+### Writing your docs in Markdown
 Start off with a single Markdown file. There are two parts:
  
 #### The content
@@ -98,16 +98,16 @@ includes:
 
 Most of these sections can be disabled in the generated documentation by omitting them from the front matter.
 
-### How do I convert my Markdown file to HTML docs?
+### Converting your Markdown file to HTML docs
 
 ```bash
-vendor/bin/pastel generate docs_source/index.md docs
+./vendor/bin/pastel generate docs_source/index.md docs
 ```
 
-This will generate a new API documentation from the file `docs_source/index.md` and place the output in your docs/ directory. You can replace `docs_source/index.md` with vendor/knuckleswtf/pastel/stubs/index.md to use the sample Markdown docs included with this package.
+This will generate the HTML output from the file `docs_source/index.md` and place it, along with the needed CSS and JavaScript in your docs/ directory. You can replace `docs_source/index.md` with vendor/knuckleswtf/pastel/stubs/index.md to use the sample Markdown docs included with this package.
 
  
-You can also call Pastel from PHP. This is especially useful if you're building a tool on top of this. Here's how you'd use it:
+You can also call Pastel from PHP. This is especially useful if you're building a tool on top of it (see [Integrations](#integrations) below. Here's how you'd use it:
  
 ```php
  $pastel = new Knuckles\Pastel\Pastel();
