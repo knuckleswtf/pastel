@@ -928,6 +928,8 @@ html {
     -moz-border-radius: 9px;
     border-radius: 9px;
     color: #ffffff;
+    text-shadow: none !important;
+    font-weight: bold;
 }
 
 .badge.badge-darkred {
