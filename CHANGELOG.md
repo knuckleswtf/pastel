@@ -5,13 +5,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project tries to adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## Unreleased
-### Added
+### Additions
 
-### Changed
+### Changes
 
-### Fixed
+### Fixes
 
-### Removed
+### Removals
+
+## 1.3.5 - Monday, 7 September 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.4...1.3.5))
+### Fixes
+- Text within the `<details>` tag should now have the same styling as regular `<p>` applied (https://github.com/knuckleswtf/pastel/commit/cf573a5666b2dc3aa1850a97432a18476ff38b0d)
 
 ## 1.3.4 - Tuesday, 14 July 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.3...1.3.4))
 ### Fixed
