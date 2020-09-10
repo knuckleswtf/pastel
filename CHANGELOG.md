@@ -15,6 +15,7 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 
 ## 1.3.5 - Monday, 7 September 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.4...1.3.5))
 ### Fixes
+- Lowered minimum required illuminate/view version to 5.8, which means Pastel (and by extension Scribe) now supports Laravel 5.8! (https://github.com/knuckleswtf/pastel/commit/1ff6b1ca78e7b9fb277d4a649a6ce83aaa07904c)
 - Text within the `<details>` tag should now have the same styling as regular `<p>` applied (https://github.com/knuckleswtf/pastel/commit/cf573a5666b2dc3aa1850a97432a18476ff38b0d)
 
 ## 1.3.4 - Tuesday, 14 July 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.3...1.3.4))
