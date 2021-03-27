@@ -13,9 +13,13 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Removals
 
-## 1.3.6 - Saturday, 27 March 2021 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.5...1.3.6))
+## 1.3.7 - Saturday, 27 March 2021 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.5...1.3.6))
 ### Fixes
 - Fixed the flow of paragraphs on mobile.
+
+## 1.3.6 - Thursday, 10 September 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.5...1.3.6))
+### Fixes
+- Elements within a `<form>` tag should now have the same styling as regular `<p>` applied (https://github.com/knuckleswtf/pastel/commit/955717d8e56741c9c8b71aafd150cf076cf4a893)
 
 ## 1.3.5 - Monday, 7 September 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.4...1.3.5))
 ### Fixes
