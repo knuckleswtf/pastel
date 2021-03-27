@@ -13,6 +13,10 @@ and this project tries to adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Removals
 
+## 1.3.6 - Saturday, 27 March 2021 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.5...1.3.6))
+### Fixes
+- Fixed the flow of paragraphs on mobile.
+
 ## 1.3.5 - Monday, 7 September 2020 ([compare to previous](https://github.com/knuckleswtf/pastel/compare/1.3.4...1.3.5))
 ### Fixes
 - Lowered minimum required illuminate/view version to 5.8, which means Pastel (and by extension Scribe) now supports Laravel 5.8! (https://github.com/knuckleswtf/pastel/commit/1ff6b1ca78e7b9fb277d4a649a6ce83aaa07904c)
