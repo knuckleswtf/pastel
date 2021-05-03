@@ -107,7 +107,7 @@ class Pastel
 
         $renderer = new BladeRenderer(
             [__DIR__ . '/../resources/views'],
-            ['cache_path' => __DIR__.'/_tmp']
+            ['cache_path' => '/tmp']
         );
         $output = $renderer->render('index', [
             'page' => $metadata,
