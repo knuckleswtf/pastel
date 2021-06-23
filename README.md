@@ -1,3 +1,5 @@
+>  This package is no longer maintained. [Scribe](https://github.com/knuckleswtf/scribe) now generates HTML directly.
+
 # Pastel 🎨
 
 [![Latest release](http://img.shields.io/packagist/v/knuckleswtf/pastel.svg?style=flat)](https://packagist.org/packages/knuckleswtf/pastel) 
