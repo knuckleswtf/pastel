@@ -1,4 +1,4 @@
->  This package is no longer maintained. [Scribe](https://github.com/knuckleswtf/scribe) now generates HTML directly.
+>  This package is deprecated. It was a good idea, but [Scribe](https://github.com/knuckleswtf/scribe) now uses a different system where it generates HTML directly. You can still use this as a basic PHP-based static site generator, but there won't be any new features or maintenance. For more fully-featured PHP SSGs, see [jamstack.org/generators/](https://jamstack.org/generators/).
 
 # Pastel 🎨
 
